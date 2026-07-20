@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SE Pathway - Feeder and Consumer Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#1A9988; --orange:#EB5600; --navy:#1C3678; --steel:#6AA4C8;
+    --purple:#5C3A8C; --dgrey:#595959; --pgrey:#E9EDEE; --ink:#1A1A1A;
+    --paper:#FBFCFC; --line:#D5DBDC; --mint:#A2FFE8;
+    --sans:'Open Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:var(--sans); color:var(--ink); background:#EFF3F3;
+    font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1280px; margin:0 auto; padding:26px 22px 60px;}
+
+  /* ---------- Masthead ---------- */
+  .mast{background:#fff; border:1px solid var(--line); border-top:5px solid var(--teal); padding:22px 26px 20px; margin-bottom:20px;}
+  .mast .eyebrow{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dgrey); font-weight:700;}
+  .mast h1{font-size:25px; font-weight:700; margin:8px 0 4px; line-height:1.2;}
+  .mast .sub{font-size:14px; color:#333; margin:0 0 12px; max-width:78ch;}
+  .bars{display:flex; gap:6px; margin:2px 0 12px;}
+  .bars span{height:6px; display:block;}
+  .bars .b1{width:52px; background:var(--teal);}
+  .bars .b2{width:26px; background:var(--orange);}
+  .metaline{display:flex; flex-wrap:wrap; gap:8px 20px; font-size:11.5px; color:var(--dgrey); border-top:1px solid var(--pgrey); padding-top:10px;}
+  .metaline b{color:var(--ink); font-weight:600;}
+
+  /* ---------- Section headers ---------- */
+  .sec{background:#fff; border:1px solid var(--line); margin-bottom:20px;}
+  .sec-h{display:flex; align-items:baseline; gap:12px; padding:14px 20px 12px; border-bottom:1px solid var(--pgrey);}
+  .sec-h .n{font-size:12px; font-weight:700; color:#fff; background:var(--navy); border-radius:3px; padding:2px 8px; letter-spacing:.04em;}
+  .sec-h h2{font-size:17px; font-weight:700; margin:0;}
+  .sec-h p{font-size:12px; color:var(--dgrey); margin:0 0 0 auto; max-width:52ch; text-align:right;}
+  .sec-body{padding:18px 20px 22px;}
+
+  /* ---------- Legend ---------- */
+  .legend{display:flex; flex-wrap:wrap; gap:10px 26px; align-items:flex-start;}
+  .lg-group{display:flex; flex-direction:column; gap:7px;}
+  .lg-title{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--dgrey); font-weight:700;}
+  .lg-row{display:flex; align-items:center; gap:8px; font-size:12px;}
+  .swatch{width:26px; height:14px; border-radius:2px; border:1px solid rgba(0,0,0,.12); flex:none;}
+  .swatch.strip{width:6px; height:16px; border-radius:1px;}
+  .lg-line{width:34px; height:0; border-top:2.5px solid var(--dgrey); position:relative; flex:none;}
+  .lg-line.up{border-color:var(--teal);}
+  .lg-line.down{border-color:var(--orange);}
+  .lg-line.dash{border-top-style:dashed;}
+  .tagmini{font-size:10.5px; font-weight:700; padding:1px 6px; border-radius:3px; letter-spacing:.03em;}
+
+  /* ---------- Spine ---------- */
+  .spine-tools{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:12px;}
+  .hint{font-size:12px; color:var(--dgrey);}
+  .btn{font-family:var(--sans); font-size:12px; font-weight:600; border:1px solid var(--line); background:#fff; color:var(--ink); padding:6px 12px; border-radius:4px; cursor:pointer;}
+  .btn:hover{border-color:var(--teal); color:var(--teal);}
+  .sel-note{font-size:12px; font-weight:600; color:var(--navy);}
+
+  .spine-scroll{overflow-x:auto; padding-bottom:6px;}
+  .spine{position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:26px; min-width:960px;}
+  #linkLayer{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:5; overflow:visible;}
+  .col{position:relative; z-index:1;}
+  .col-h{text-align:center; margin-bottom:12px;}
+  .col-h .lvl{font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:700; color:var(--dgrey);}
+  .col-h .yr{font-size:14px; font-weight:700; color:var(--ink); display:block; margin-top:2px;}
+  .col-h .cr{font-size:11px; color:var(--dgrey);}
+  .col.cu .col-h .yr{color:var(--orange);}
+  .subhead{font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:#9098a0; font-weight:700; margin:10px 2px 6px;}
+
+  .chip{position:relative; background:#fff; border:1px solid var(--line); border-left-width:5px; border-radius:5px; padding:8px 10px 9px; margin-bottom:9px; cursor:pointer; transition:box-shadow .12s, transform .12s, opacity .12s;}
+  .chip:hover{box-shadow:0 2px 10px rgba(0,0,0,.10); transform:translateY(-1px);}
+  .chip .ct{font-size:12.5px; font-weight:700; line-height:1.25;}
+  .chip .cmeta{font-size:10.5px; color:var(--dgrey); margin-top:3px; display:flex; flex-wrap:wrap; gap:3px 8px; align-items:center;}
+  .chip .cr-badge{font-weight:700; color:var(--ink);}
+  .chip .brg{font-size:9.5px; font-weight:700; color:#fff; background:var(--purple); border-radius:3px; padding:1px 5px; letter-spacing:.03em;}
+  .chip .code{font-size:10px; font-weight:700; color:var(--orange); letter-spacing:.02em;}
+
+  .chip.t-cmn{border-left-color:var(--teal);}
+  .chip.t-csc{border-left-color:var(--steel);}
+  .chip.t-swe{border-left-color:var(--navy);}
+  .chip.t-int{border-left-color:var(--dgrey);}
+  .chip.t-skl{border-left-color:var(--purple);}
+  .chip.t-cu{border-left-color:var(--orange); background:#FFFaf6;}
+
+  .chip.dim{opacity:.28;}
+  .chip.sel{box-shadow:0 0 0 2px var(--ink), 0 4px 16px rgba(0,0,0,.16);}
+  .chip.up{box-shadow:0 0 0 2px var(--teal);}
+  .chip.down{box-shadow:0 0 0 2px var(--orange);}
+
+  /* ---------- Detail panel ---------- */
+  .panel{border:1px solid var(--line); border-top:4px solid var(--navy); background:#fff; margin-top:16px; padding:0; display:none;}
+  .panel.open{display:block;}
+  .panel-h{padding:14px 18px 12px; border-bottom:1px solid var(--pgrey); display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap;}
+  .panel-h h3{font-size:16px; font-weight:700; margin:0;}
+  .panel-h .p-tags{display:flex; gap:6px; flex-wrap:wrap; margin-top:6px;}
+  .panel-grid{display:grid; grid-template-columns:1fr 1fr; gap:0;}
+  .pcell{padding:14px 18px; border-right:1px solid var(--pgrey); border-bottom:1px solid var(--pgrey);}
+  .pcell:nth-child(2n){border-right:none;}
+  .pcell h4{font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--dgrey); margin:0 0 8px; font-weight:700;}
+  .rel-item{font-size:12.5px; margin:0 0 6px; padding-left:16px; position:relative; line-height:1.4;}
+  .rel-item::before{content:""; position:absolute; left:0; top:6px; width:8px; height:8px; border-radius:2px;}
+  .rel-item.down::before{background:var(--orange);}
+  .rel-item.up::before{background:var(--teal);}
+  .rel-item .rname{font-weight:600;}
+  .rel-item .rcode{font-size:10.5px; font-weight:700; color:var(--orange);}
+  .rel-item .rnote{color:var(--dgrey);}
+  .rel-item .soft{font-size:10px; font-weight:700; color:var(--dgrey); border:1px solid var(--line); border-radius:3px; padding:0 4px; margin-left:4px;}
+  .pcell p.body{font-size:12.5px; margin:0; line-height:1.5;}
+  .pcell.covers{background:#F4FBF9;}
+  .pcell.excl{background:#FFF7F3;}
+
+  /* ---------- Detail cards (static, print) ---------- */
+  .cards{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  .card{border:1px solid var(--line); border-left-width:5px; border-radius:5px; background:#fff; padding:13px 15px 14px;}
+  .card.t-cmn{border-left-color:var(--teal);} .card.t-csc{border-left-color:var(--steel);}
+  .card.t-swe{border-left-color:var(--navy);} .card.t-int{border-left-color:var(--dgrey);}
+  .card.t-skl{border-left-color:var(--purple);}
+  .card .c-top{display:flex; justify-content:space-between; align-items:baseline; gap:10px;}
+  .card h3{font-size:14px; font-weight:700; margin:0 0 2px; line-height:1.25;}
+  .card .c-cr{font-size:11px; font-weight:700; color:var(--ink); white-space:nowrap;}
+  .card .c-tags{display:flex; gap:5px; flex-wrap:wrap; margin:6px 0 9px;}
+  .card .c-role{font-size:12px; font-style:italic; color:var(--navy); margin:0 0 9px;}
+  .card .grp{margin-bottom:9px;}
+  .card .grp .lab{font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--dgrey); font-weight:700; margin-bottom:3px;}
+  .card .grp .val{font-size:12px; line-height:1.45;}
+  .card .feeds .val span.f{display:inline;}
+  .card .arrow{color:var(--orange); font-weight:700;}
+  .card .arrow.up{color:var(--teal);}
+  .card .softtag{font-size:9.5px; font-weight:700; color:var(--dgrey); border:1px solid var(--line); border-radius:3px; padding:0 4px;}
+  .card .cu-ref{font-weight:700; color:var(--orange);}
+  .card .covers-line{font-size:11.5px; line-height:1.45;}
+  .card .covers-line b{color:var(--teal);}
+  .card .excl-line b{color:var(--orange);}
+  .card .exit{font-size:11.5px; color:#333; border-top:1px dotted var(--line); padding-top:8px; margin-top:2px;}
+
+  .tag{font-size:10px; font-weight:700; padding:2px 7px; border-radius:3px; letter-spacing:.02em; white-space:nowrap;}
+  .tag.type{color:#fff;}
+  .tag.tt-cmn{background:var(--teal);} .tag.tt-csc{background:var(--steel);}
+  .tag.tt-swe{background:var(--navy);} .tag.tt-int{background:var(--dgrey);}
+  .tag.tt-skl{background:var(--purple);}
+  .tag.cr{background:var(--pgrey); color:var(--ink);}
+  .tag.brg{background:var(--purple); color:#fff;}
+
+  .yr-band{font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--dgrey); margin:6px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--pgrey);}
+  .yr-band:not(:first-child){margin-top:26px;}
+
+  /* ---------- Coventry reverse table ---------- */
+  table.cu{width:100%; border-collapse:collapse; font-size:12px;}
+  table.cu th{background:var(--navy); color:#fff; font-size:11px; text-align:left; padding:8px 10px; font-weight:700; letter-spacing:.02em;}
+  table.cu td{border-bottom:1px solid var(--pgrey); padding:8px 10px; vertical-align:top;}
+  table.cu tr:nth-child(even) td{background:#FAFBFB;}
+  table.cu .code{font-weight:700; color:var(--orange); white-space:nowrap; font-size:11.5px;}
+  table.cu .cu-title{font-weight:600;}
+  table.cu .sem{font-size:11px; color:var(--dgrey); white-space:nowrap;}
+  table.cu .cr{font-weight:700; white-space:nowrap;}
+  table.cu .feeders{font-size:11.5px; line-height:1.5;}
+  table.cu .feeders .fd{white-space:nowrap;}
+  table.cu .feeders .soft{color:var(--dgrey);}
+  table.cu .none{color:var(--dgrey); font-style:italic;}
+  .lvl-row td{background:var(--pgrey)!important; font-weight:700; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); padding:5px 10px;}
+
+  .foot{font-size:11px; color:var(--dgrey); margin-top:22px; border-top:1px solid var(--line); padding-top:12px; line-height:1.5;}
+
+  @media (max-width:920px){
+    .spine{min-width:900px;}
+    .panel-grid{grid-template-columns:1fr;}
+    .pcell{border-right:none;}
+    .cards{grid-template-columns:1fr;}
+    .sec-h p{display:none;}
+  }
+  @media print{
+    body{background:#fff; font-size:11px;}
+    .wrap{max-width:none; padding:0;}
+    .spine-tools,.panel,#linkLayer{display:none!important;}
+    .sec,.mast{border-color:#bbb; break-inside:avoid;}
+    .chip{cursor:default;}
+    .cards{grid-template-columns:1fr 1fr;}
+    .card,.chip{break-inside:avoid;}
+  }
+  .chip .ncode{font-size:9.5px; font-weight:700; color:#8a9096; letter-spacing:.02em;}
+  .card .ncode{font-size:10px; font-weight:700; color:#8a9096; letter-spacing:.02em; margin-bottom:2px;}
+  .cap-note{font-size:11.5px; color:var(--dgrey); margin:12px 2px 0; line-height:1.5; border-top:1px dotted var(--line); padding-top:10px;}
+  .cap-note b{color:var(--ink);}
+  .vchip{font-size:10.5px;font-weight:700;color:#fff;background:var(--orange);border-radius:3px;padding:2px 8px;letter-spacing:.03em;}
+</style>
+<body>
+<div class="wrap">
+
+  <!-- MASTHEAD -->
+  <div class="mast">
+    <div class="eyebrow">NIBM School of Computing and Engineering &nbsp;&middot;&nbsp; Curriculum Restructuring 2026/2027 &nbsp;&middot;&nbsp; <span class="vchip">v8.1</span></div>
+    <h1>Feeder and Consumer Map - Computer Science with Software Engineering</h1>
+    <div class="bars"><span class="b1"></span><span class="b2"></span></div>
+    <p class="sub">Vertical mapping of the SLQF Level 3 (Diploma) and Level 4 (HND) stages onto the validated Coventry University FHEQ Levels 5 and 6. Every module is placed by what prepares it and what it prepares, so that each prerequisite chain is named and traceable rather than assumed.</p>
+    <div class="metaline">
+      <span><b>Award:</b> BSc (Hons) Computer Science with Software Engineering</span>
+      <span><b>Validation partner:</b> Coventry University</span>
+      <span><b>Architecture:</b> v8.1 (module records v2.3)</span>
+      <span><b>Credit basis:</b> SLQF - 1 credit = 50 notional hours (Industrial Training = 100)</span>
+      <span><b>Diploma exit:</b> 41 credits / 13 modules</span>
+      <span><b>HND exit:</b> 43 credits / 15 modules</span>
+      <span><b>Status:</b> Governance submission</span>
+    </div>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="sec">
+    <div class="sec-h"><span class="n">Key</span><h2>How to read this map</h2>
+      <p>Module type is shown by the left border colour. Relationship direction and strength are shown by line colour and style.</p>
+    </div>
+    <div class="sec-body">
+      <div class="legend">
+        <div class="lg-group">
+          <span class="lg-title">Module type</span>
+          <div class="lg-row"><span class="swatch strip" style="background:var(--teal)"></span> Common - institution-wide (Tier 1)</div>
+          <div class="lg-row"><span class="swatch strip" style="background:var(--steel)"></span> Common - computing cluster (Tier 2)</div>
+          <div class="lg-row"><span class="swatch strip" style="background:var(--navy)"></span> Pathway - taught</div>
+          <div class="lg-row"><span class="swatch strip" style="background:var(--dgrey)"></span> Integrative skills</div>
+          <div class="lg-row"><span class="swatch strip" style="background:var(--purple)"></span> Pathway - project / placement</div>
+          <div class="lg-row"><span class="swatch strip" style="background:var(--orange)"></span> Coventry FHEQ Level 5 / 6 destination</div>
+        </div>
+        <div class="lg-group">
+          <span class="lg-title">Relationships (on selecting a module)</span>
+          <div class="lg-row"><span class="lg-line up"></span> Feeds this module (upstream preparation)</div>
+          <div class="lg-row"><span class="lg-line down"></span> This module feeds (downstream consumer)</div>
+          <div class="lg-row"><span class="lg-line down dash"></span> Indicative or supporting link, not a hard prerequisite</div>
+        </div>
+        <div class="lg-group">
+          <span class="lg-title">Markers</span>
+          <div class="lg-row"><span class="tagmini" style="background:var(--purple);color:#fff">BRIDGE</span> Inbound bridging module for transferring students</div>
+          <div class="lg-row"><span class="tagmini" style="background:var(--dgrey);color:#fff">NON-CREDIT</span> Mandatory pass/fail component, no credit contribution</div>
+          <div class="lg-row"><span class="ncode" style="font-size:11px">NB-SOCE-L3-...</span> &nbsp;NIBM module code &nbsp;&middot;&nbsp; <span class="code" style="font-size:11px">NB0000CEM</span> Coventry module</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPINE -->
+  <div class="sec">
+    <div class="sec-h"><span class="n">1</span><h2>The vertical spine</h2>
+      <p>Select any module to trace its full lineage across all four levels. Feeders light up in teal, consumers in orange.</p>
+    </div>
+    <div class="sec-body">
+      <div class="spine-tools">
+        <span class="hint">Click a module to trace its feeders and consumers.</span>
+        <button class="btn" id="resetBtn">Clear selection</button>
+        <span class="sel-note" id="selNote"></span>
+      </div>
+      <div class="spine-scroll">
+        <div class="spine" id="spine">
+          <svg id="linkLayer"></svg>
+          <div class="col" data-col="0" id="col0"><div class="col-h"><span class="lvl">SLQF Level 3 &middot; Diploma</span><span class="yr">Year 1</span><span class="cr">11 modules &middot; 37 credits</span></div></div>
+          <div class="col" data-col="1" id="col1"><div class="col-h"><span class="lvl">SLQF Level 4 &middot; Higher Diploma (HND)</span><span class="yr">Year 2</span><span class="cr">13 modules &middot; 39 credits</span></div></div>
+          <div class="col cu" data-col="2" id="col2"><div class="col-h"><span class="lvl">Coventry &middot; FHEQ Level 5</span><span class="yr">Level 5</span><span class="cr">Year 3 &middot; 120 CATS</span></div></div>
+          <div class="col cu" data-col="3" id="col3"><div class="col-h"><span class="lvl">Coventry &middot; FHEQ Level 6</span><span class="yr">Level 6</span><span class="cr">Year 4 &middot; 120 CATS</span></div></div>
+        </div>
+      </div>
+
+      <div class="cap-note"><b>Continuing totals shown.</b> The Diploma and HND exit awards each add a separate 4-credit Exit Block taken only by exiting students (Diploma exit 41 credits / 13 modules; HND exit 43 credits / 15 modules). CREST is a mandatory non-credit component and is not counted in the Year 2 credit total. Exit-block modules are terminal and do not feed the Coventry stage, so they are not drawn on the spine.</div>
+
+      <!-- DETAIL PANEL -->
+      <div class="panel" id="panel">
+        <div class="panel-h">
+          <div>
+            <h3 id="pTitle"></h3>
+            <div class="p-tags" id="pTags"></div>
+          </div>
+        </div>
+        <div class="panel-grid">
+          <div class="pcell"><h4>Builds on (feeders)</h4><div id="pUp"></div></div>
+          <div class="pcell"><h4>Feeds into (consumers)</h4><div id="pDown"></div></div>
+          <div class="pcell covers"><h4>Scope - covers</h4><p class="body" id="pCovers"></p></div>
+          <div class="pcell excl"><h4>Scope - excludes</h4><p class="body" id="pExcl"></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DETAIL CARDS -->
+  <div class="sec">
+    <div class="sec-h"><span class="n">2</span><h2>Module records</h2>
+      <p>Full detail for every Year 1 and Year 2 module: preparation, downstream targets, scope boundary and exit-award relevance.</p>
+    </div>
+    <div class="sec-body" id="cardsHost"></div>
+  </div>
+
+  <!-- COVENTRY REVERSE -->
+  <div class="sec">
+    <div class="sec-h"><span class="n">3</span><h2>Coventry destination - preparation received</h2>
+      <p>The consumer's-eye view: for each validated Level 5 and 6 module, the Years 1 and 2 modules that prepare it.</p>
+    </div>
+    <div class="sec-body">
+      <table class="cu"><thead><tr>
+        <th style="width:104px">Code</th><th>Module</th><th style="width:70px">Credits</th>
+        <th>Prepared by (Years 1 and 2)</th></tr></thead>
+        <tbody id="cuBody"></tbody>
+      </table>
+      <p style="font-size:11px;color:var(--dgrey);margin:12px 0 0">Feeders shown in normal weight are hard preparation; those marked <span style="border:1px solid var(--line);border-radius:3px;padding:0 4px;font-size:10px;font-weight:700;color:var(--dgrey)">supporting</span> are indicative or contextual. Level 5 and 6 credits are Coventry CATS; NIBM Years 1 and 2 are stated in SLQF credits.</p>
+    </div>
+  </div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+/* ============================================================
+   DATA - Software Engineering pathway, v8.1 (module records v2.3, 19 Jul 2026).
+   To reuse this template for another pathway, replace this block only.
+   feeds: {to, soft?, note?}  -> to = target module id
+   ============================================================ */
+const CU = {
+  cu_agile:{code:'NB5000CEM',title:'Agile',cr:20,lvl:5,sem:'Y3 S1'},
+  cu_dux:{code:'NB5001CEM',title:'Designing User Experiences',cr:20,lvl:5,sem:'Y3 S1'},
+  cu_pdsa2:{code:'NB5002CEM',title:'Programming, Data Structures and Algorithms 2',cr:20,lvl:5,sem:'Y3 S1'},
+  cu_cyber:{code:'NB5004CEM',title:'Cyber Security',cr:20,lvl:5,sem:'Y3 S2'},
+  cu_ds:{code:'NB5005CEM',title:'Data Science',cr:20,lvl:5,sem:'Y3 S2'},
+  cu_ecs3:{code:'NB5006CEM',title:'Effective Communication Skills 3',cr:10,lvl:5,sem:'Y3 S2'},
+  cu_ethics:{code:'NB5003CEM',title:'Technology and Its Social, Legal and Ethical Context',cr:10,lvl:5,sem:'Y3 S2'},
+  cu_ssec:{code:'NB6035CEM',title:'Software Security',cr:20,lvl:6,sem:'Y4 S1'},
+  cu_webapi:{code:'NB6007CEM',title:'Web API Development',cr:20,lvl:6,sem:'Y4 S1'},
+  cu_mad2:{code:'NB6033CEM',title:'Mobile Application Development 2',cr:20,lvl:6,sem:'Y4 S1'},
+  cu_se2:{code:'NB6034CEM',title:'Software Engineering 2',cr:20,lvl:6,sem:'Y4 S2'},
+  cu_project:{code:'NB6020CEM',title:'Project',cr:30,lvl:6,sem:'Y4 S2'},
+  cu_lead:{code:'NB6002CEM',title:'Leadership and Entrepreneurial Practice in Computing',cr:10,lvl:6,sem:'Y4 S2'}
+};
+
+const MODS = [
+  /* ---------------- YEAR 1 (SLQF Level 3) ---------------- */
+  {id:'foc',year:1,title:'Fundamentals of Computing',code:'NB-SOCE-L3-CM-TT-01',cr:4,type:'cmn',typeLabel:'Common / Taught',
+   role:'Baseline computational literacy held by every entrant; systems and networks now at operational level.',
+   feeds:[{to:'cu_cyber',note:'operational systems and networks context (co-supply with Web Application Foundations)'}],
+   covers:'Hardware and software fundamentals; number systems and data representation; operating-system and computer-network concepts at operational level; computing-ethics awareness.',
+   excludes:'Digital logic, electronics and computer organisation (Digital Electronics and Logic Design); programming; discipline-specific infrastructure depth.',
+   exit:'Baseline computational literacy with operational systems and networks grasp, underpinning the Diploma-level profile.'},
+
+  {id:'math',year:1,title:'Mathematical Thinking',code:'NB-SOCE-L3-CM-TT-02',cr:4,type:'cmn',typeLabel:'Common / Taught',
+   role:'Cohort-paced, applied mathematics for computing.',
+   feeds:[{to:'cu_cyber',note:'elementary modular arithmetic for applied cryptography'},{to:'cu_ds',note:'baseline probability and statistics, with the data strand'},{to:'pdsa1',note:'discrete structures and logic beneath data structures and complexity'}],
+   covers:'Discrete structures (sets, relations, functions); linear algebra foundations (vectors, matrix arithmetic); baseline probability; elementary modular arithmetic supporting Level 5 applied cryptography; a hands-on, pragmatic treatment paced for the cohort.',
+   excludes:'Statistical inference machinery; eigen-decomposition and calculus; applied statistical modelling.',
+   exit:'Mathematical-reasoning component of the Diploma-level profile.'},
+
+  {id:'algo',year:1,title:'Algorithmic Thinking',code:'NB-SOCE-L3-CM-TT-03',cr:3,type:'cmn',typeLabel:'Common / Taught',
+   role:'',
+   feeds:[{to:'pdsa1',note:'conceptual grounding for data structures, algorithm families and complexity'}],
+   covers:'Problem decomposition; pseudocode and flow representation; searching and sorting concepts; elementary data structures conceptually; complexity intuition.',
+   excludes:'Implementation in a production language; formal algorithm analysis.',
+   exit:'Computational-thinking component of the Diploma-level profile.'},
+
+  {id:'deld',year:1,title:'Digital Electronics and Logic Design',code:'NB-SOCE-L3-CM-TT-04',cr:3,type:'cmn',typeLabel:'Common / Taught (laboratory)',
+   role:'New at v8.1. Electronics as a common laboratory module - SE graduates who read the hardware beneath their software, a differentiator for IoT-software and embedded-adjacent roles.',
+   feeds:[{to:'iot',note:'hardware literacy beneath connected-device software - the named DELD to IoT chain'},{to:'cap',soft:true,note:'enables properly resourced electronics/IoT capstone themes'}],
+   covers:'Combinational and sequential logic design; digital-electronics fundamentals at introductory laboratory level; the bridge from logic to computer organisation and processor operation; number systems applied in hardware; laboratory practice throughout.',
+   excludes:'Embedded-systems programming; electronics-engineering depth; pathway infrastructure content (the boundary with Operating Systems and Infrastructure is policed at specification stage).',
+   exit:'Hardware literacy and analytical grounding in the Diploma-level profile.'},
+
+  {id:'prog',year:1,title:'Programming Concepts',code:'NB-SOCE-L3-CC-TT-01',cr:4,type:'csc',typeLabel:'Common / Taught',
+   role:'The load-bearing feeder of the pathway - the common language base for the Year 2 applied development set.',
+   feeds:[{to:'sesa',note:'development experience to ground process'},{to:'saf'},{to:'waf',note:'general programming behind client-side scripting'},{to:'pdsa1',note:'language fluency'},{to:'ead'},{to:'wcad'},{to:'mad1',note:'object orientation'},{to:'sqt'},{to:'iot'},{to:'aiad'}],
+   covers:'Programming fundamentals in a production language; control structures, functions and collections; object-oriented concepts; program design and debugging practice.',
+   excludes:'Data-structure and algorithm implementation depth (PDSA I); secure coding (owned in SE pathway space); pathway application stacks.',
+   exit:'Programming competency central to the Diploma-level profile.'},
+
+  {id:'dmms',year:1,title:'Data Models and Management Systems',code:'NB-SOCE-L3-CC-TT-02',cr:4,type:'csc',typeLabel:'Common / Taught',
+   role:'Retitled at v8.1 and now the pathway SQL teach-source: teaches SQL practice and DBMS use directly.',
+   feeds:[{to:'ead',note:'supplies practised SQL and DBMS use that Enterprise Application Development assumes'},{to:'mad1',note:'database integration (consumption level)'},{to:'iot',note:'device-data handling'},{to:'cu_ds',note:'the data strand, with Mathematical Thinking'}],
+   covers:'Data-modelling concepts; relational-model foundations; structured and semi-structured data; a systems view of storage and retrieval; DBMS fundamentals with SQL practice as the emphasis of the fourth credit.',
+   excludes:'Data-engineering and pipeline depth; production database administration; engineering-level schema design and normalisation.',
+   exit:'Data-modelling and SQL competency in the Diploma-level profile.'},
+
+  {id:'sesa',year:1,title:'Software Engineering and Systems Analysis',code:'NB-SOCE-L3-SE-TT-01',cr:4,type:'swe',typeLabel:'Pathway / Taught',bridge:true,
+   role:'The sole Year-1 home of software-engineering process, held at 4 credits and repaired in Year 2.',
+   feeds:[{to:'cu_agile',note:'SDLC, requirements, analysis and design'},{to:'cu_dux',note:'requirements and user-study grounding'},{to:'cu_se2',note:'the process foundation SE 2 extends'},{to:'sqt',note:'process context'},{to:'uxid',note:'requirements grounding'},{to:'bpmp',soft:true,note:'project-practice vocabulary'}],
+   covers:'The software development lifecycle and process models; requirements engineering and elicitation; systems analysis and modelling; introductory design; team and project practice.',
+   excludes:'Architectural styles and structural design (Software Architecture Foundations); quality, testing and delivery automation (Software Quality and Testing); user-centred design method (User Experience and Interaction Design); project-management and business-practice depth (Business and Project Management Practice).',
+   exit:'Software-engineering process competency central to the SE Diploma-level profile.'},
+
+  {id:'saf',year:1,title:'Software Architecture Foundations',code:'NB-SOCE-L3-SE-TT-02',cr:3,type:'swe',typeLabel:'Pathway / Taught',bridge:true,
+   role:'Architecture in principle - the conceptual half of the enterprise vertical; trimmed to 3 credits with the applied half untouched.',
+   feeds:[{to:'cu_se2',note:'architectural styles and quality-attribute reasoning (joint with Enterprise Application Development)'},{to:'ead',note:'structure in principle to practice'},{to:'mad1',soft:true,note:'design-pattern awareness'}],
+   covers:'Architectural styles and patterns at the structural level; quality attributes (maintainability, scalability, performance); high-level structural design; the vocabulary of architecture.',
+   excludes:'Applied enterprise construction and pattern implementation (Enterprise Application Development); process and lifecycle (Software Engineering and Systems Analysis).',
+   exit:'Architectural-reasoning competency in the SE Diploma-level profile.'},
+
+  {id:'waf',year:1,title:'Web Application Foundations',code:'NB-SOCE-L3-SE-TT-03',cr:3,type:'swe',typeLabel:'Pathway / Taught',bridge:true,
+   role:'First tier of the two-tier web vertical; the demanding content sits in the Year 2 tier.',
+   feeds:[{to:'wcad',note:'the tiered continuation'},{to:'iot'},{to:'aiad'},{to:'cu_cyber',soft:true,note:'client-server and HTTP context (co-supply with Fundamentals of Computing)'}],
+   covers:'HTTP and the client-server model; HTML and CSS; introductory JavaScript; the document object model.',
+   excludes:'Server-side JavaScript, Node.js, REST API design, asynchronous programming, API security and cloud delivery (Web and Cloud Application Development).',
+   exit:'Web-foundations competency in the SE Diploma-level profile.'},
+
+  {id:'ecs1',year:1,title:'Effective Communication Skills I',code:'NB-SOCE-L3-CM-IS-01',cr:2,type:'int',typeLabel:'Common / Integrative Skills',
+   role:'',
+   feeds:[{to:'ecs2'},{to:'cu_ecs3',note:'the numbered communication spine'}],
+   covers:'Foundational written and verbal communication; audience awareness; introductory professional presentation.',
+   excludes:'Advanced interpersonal and reflective communication (ECS II and Level 5 ECS 3).',
+   exit:'Professional-communication component of the Diploma-level profile.'},
+
+  {id:'cproj',year:1,title:'Creative Project',code:'NB-SOCE-L3-CM-IS-02',cr:3,type:'int',typeLabel:'Common / Integrative Skills',
+   role:'',
+   feeds:[{to:'cap',note:'prior supervised-project experience'},{to:'cu_project'},{to:'uxid',soft:true,note:'ideation, prototyping and delivery maturity'},{to:'cu_dux',soft:true}],
+   covers:'Supervised project work; ideation and delivery; presentation of outcomes; project ownership.',
+   excludes:'Pathway-specific applied capstone depth (Capstone Project); degree-level independent research (Level 6 Project).',
+   exit:'Project and ownership evidence for the Diploma-level profile.'},
+
+  /* ---------------- YEAR 2 (SLQF Level 4) ---------------- */
+  {id:'pdsa1',year:2,title:'Programming, Data Structures and Algorithms I',code:'NB-SOCE-L4-CC-TT-01',cr:3,type:'csc',typeLabel:'Common / Taught',
+   role:'',
+   feeds:[{to:'cu_pdsa2',note:'the direct numbered predecessor'}],
+   covers:'Data structures (linked lists, trees, heaps, hash tables); core algorithm families; complexity (Big-O); introduction to concurrency and data-consistency concepts.',
+   excludes:'Advanced and distributed algorithms (Level 5 PDSA 2); pathway application stacks.',
+   exit:'Advanced programming competency in the HND-level profile.'},
+
+  {id:'ead',year:2,title:'Enterprise Application Development',code:'NB-SOCE-L4-SE-TT-01',cr:4,type:'swe',typeLabel:'Pathway / Taught',
+   role:'Architecture in practice; now assumes SQL fluency from Year 1.',
+   feeds:[{to:'cu_webapi',note:'application construction'},{to:'cu_se2',note:'large-scale build, applied design patterns, architecture in practice'}],
+   covers:'Applied enterprise application construction; software design patterns; applied persistence (data-access layers, framework and ORM persistence, transactions); framework-based development; a continuous-integration DevOps thread.',
+   excludes:'SQL teaching and DBMS fundamentals (Data Models and Management Systems - fluency assumed); architectural styles and quality-attribute theory (Software Architecture Foundations); web, API and cloud delivery (Web and Cloud Application Development); testing depth (Software Quality and Testing).',
+   exit:'Enterprise construction competency central to the SE HND-level profile.'},
+
+  {id:'wcad',year:2,title:'Web and Cloud Application Development',code:'NB-SOCE-L4-SE-TT-02',cr:4,type:'swe',typeLabel:'Pathway / Taught',
+   role:'Retitled at v8.1, absorbing cloud delivery. Second tier of the web vertical and the densest module in the year.',
+   feeds:[{to:'cu_webapi',note:'flagship: Node.js, REST, async, API security, deployment'},{to:'cu_se2',note:'microservice awareness and DevOps pipelines'},{to:'cu_mad2',note:'RESTful API consumption'},{to:'cu_cyber',note:'web authentication and HTTPS in application context'},{to:'aiad',note:'API consumption'},{to:'mad1',soft:true,note:'API-consumption mechanics'}],
+   covers:'Server-side JavaScript and Node.js; REST API design and implementation; asynchronous programming; API security and authentication; single-page application delivery; cloud deployment and operation of applications and APIs; the DevOps delivery pipeline; a web-security secure-coding thread.',
+   excludes:'Web foundations (Web Application Foundations); enterprise persistence build (Enterprise Application Development); cloud infrastructure provisioning and operations (Network Engineering pathway); device backends (IoT Application Development); deep security engineering (Level 5 Cyber Security).',
+   exit:'Web, API and cloud-delivery competency central to the SE HND-level profile.'},
+
+  {id:'mad1',year:2,title:'Mobile Application Development I',code:'NB-SOCE-L4-SE-TT-03',cr:3,type:'swe',typeLabel:'Pathway / Taught',
+   role:'Numbered predecessor mirroring the validated mobile chain; narrowed at v8.1 to its mobile-specific core as the supporting spine now carries more of its load.',
+   feeds:[{to:'cu_mad2',note:'the direct numbered predecessor'}],
+   covers:'Mobile application development; introductory software design patterns in the mobile context; mobile UI construction; database integration and RESTful API consumption.',
+   excludes:'The MVVM pattern, continuous integration and crash-analytics depth (Level 6 Mobile Application Development 2); SQL teaching (Data Models and Management Systems).',
+   exit:'Mobile development competency in the SE HND-level profile.'},
+
+  {id:'sqt',year:2,title:'Software Quality and Testing',code:'NB-SOCE-L4-SE-TT-04',cr:3,type:'swe',typeLabel:'Pathway / Taught',
+   role:'The deliberate Year-2 repair for the front-loaded software-engineering process strand.',
+   feeds:[{to:'cu_se2',note:'quality, testing, TDD, version control'},{to:'cu_agile',note:'automated testing and CI grounding'},{to:'cu_ssec',note:'security testing builds on testing fundamentals'}],
+   covers:'Software quality concepts and standards; testing strategies (unit, integration, acceptance); test-driven development; test doubles (mocks and spies); version-control practice; a security-testing secure-coding thread.',
+   excludes:'Deployment and DevOps pipeline depth (Enterprise Application Development; Web and Cloud Application Development); architectural design (Software Architecture Foundations).',
+   exit:'Software-quality competency central to the SE HND-level profile.'},
+
+  {id:'uxid',year:2,title:'User Experience and Interaction Design',code:'NB-SOCE-L4-SE-TT-05',cr:3,type:'swe',typeLabel:'Pathway / Taught',
+   role:'Design method, deliberately distinct from web and mobile technology.',
+   feeds:[{to:'cu_dux',note:'supplies the human-centred design method'}],
+   covers:'User-centred design process; user research and interface requirements; interaction design; prototyping method (lo- to hi-fidelity); introductory usability evaluation.',
+   excludes:'Web or mobile implementation technology (Web and Cloud Application Development; Mobile Application Development I); advanced usability-laboratory technique (Level 5 Designing User Experiences).',
+   exit:'User-centred design competency in the SE HND-level profile.'},
+
+  {id:'iot',year:2,title:'IoT Application Development',code:'NB-SOCE-L4-SE-TT-06',cr:2,type:'swe',typeLabel:'Pathway / Taught',
+   role:'New at v8.1 (split from Cloud and IoT). Connected-device software with Digital Electronics and Logic Design as its named foundation; a documented employability element, indicative rather than hard-anchored to the degree.',
+   feeds:[{to:'cu_webapi',soft:true,note:'device API design'},{to:'cu_project',soft:true,note:'IoT project themes'},{to:'cap',soft:true,note:'IoT capstone themes, laboratory-resourced'}],
+   covers:'Connected-device application backends; APIs to and from devices; device-data ingestion and handling; integration with cloud services.',
+   excludes:'Electronics and embedded-hardware programming (Digital Electronics and Logic Design owns the foundations); device and network hardware (Network Engineering pathway); cloud deployment mechanics (Web and Cloud Application Development).',
+   exit:'Connected-application competency in the SE HND-level profile; with Digital Electronics and Logic Design beneath it, the applied connected-systems answer is structurally complete.'},
+
+  {id:'aiad',year:2,title:'AI-Enabled Application Development',code:'NB-SOCE-L4-SE-TT-07',cr:3,type:'swe',typeLabel:'Pathway / Taught',
+   role:'AI integration on the use-not-build axis; connections to the degree are indicative rather than hard prerequisites.',
+   feeds:[{to:'cu_webapi',soft:true,note:'consuming AI/ML services through APIs'},{to:'cu_mad2',soft:true,note:'embedding AI features in applications'},{to:'cu_project',soft:true,note:'AI-enabled project themes'}],
+   covers:'Integrating AI and machine-learning capabilities into applications; consuming AI and ML services and APIs; embedding pre-built models; AI-assisted development practice.',
+   excludes:'Building, training or theorising machine-learning models (AI and Data Science pathway territory).',
+   exit:'AI-integration competency positioning graduates for AI-augmented software roles.'},
+
+  {id:'bpmp',year:2,title:'Business and Project Management Practice',code:'NB-SOCE-L4-SE-TT-08',cr:2,type:'swe',typeLabel:'Pathway / Taught',
+   role:'New at v8.1. Restores credit-bearing business and project-management content to the HND profile.',
+   feeds:[{to:'cu_lead',note:'management-practice grounding'},{to:'cu_agile',note:'project-management vocabulary and planning practice'},{to:'itrain',soft:true,note:'workplace-readiness grounding'}],
+   covers:'Project-management practice (initiation, planning, estimation, tracking, agile and plan-driven); the business and organisational context of software work; introductory business processes; professional practice.',
+   excludes:'Entrepreneurship and ideation (CREST); communication skill (Effective Communication Skills II); business-information-systems depth (IT for Business pathway); degree-level leadership theory (Level 6 Leadership and Entrepreneurial Practice); DevOps tooling (Web and Cloud Application Development; Enterprise Application Development).',
+   exit:'Business and project-management competency in the SE HND-level profile.'},
+
+  {id:'crest',year:2,title:'Entrepreneurship, Creativity and Innovation (CREST)',code:'NB-SOCE-L4-CM-IS-01',cr:0,type:'int',typeLabel:'Common / Integrative Skills',noncredit:true,
+   role:'Now a mandatory non-credit completion component; its hours are excluded from award totals.',
+   feeds:[{to:'cu_lead',note:'entrepreneurship and professional-practice thread'}],
+   covers:'Entrepreneurship, creativity and innovation practice; ideation to value; enterprise skills.',
+   excludes:'Degree-level leadership and entrepreneurial theory (Level 6 Leadership and Entrepreneurial Practice); project-management and business practice (Business and Project Management Practice).',
+   exit:'Mandatory completion component of the HND award; enterprise-skills evidence without credit contribution.'},
+
+  {id:'ecs2',year:2,title:'Effective Communication Skills II',code:'NB-SOCE-L4-CM-IS-02',cr:2,type:'int',typeLabel:'Common / Integrative Skills',
+   role:'',
+   feeds:[{to:'cu_ecs3',note:'the numbered communication spine'}],
+   covers:'Advanced interpersonal communication; assertiveness; reflective practice; audience-adaptive professional communication.',
+   excludes:'Degree-level interpersonal and emotional-intelligence depth (Level 5 ECS 3).',
+   exit:'Advanced-communication component of the HND-level profile.'},
+
+  {id:'cap',year:2,title:'Capstone Project',code:'NB-SOCE-L4-SE-SK-01',cr:5,type:'skl',typeLabel:'Pathway / Skills',
+   role:'Integrates the Year-2 taught modules; electronics/IoT themes now laboratory-resourced through Digital Electronics and Logic Design.',
+   feeds:[{to:'cu_project',note:'the independent-project and research-readiness antecedent'}],
+   covers:'An integrative, output-oriented SE pathway project; methods input; supervision; demonstration and viva. Integrates the Year-2 taught modules.',
+   excludes:'The degree-level independent research depth of the Level 6 Project.',
+   exit:'Capstone evidence for the HND-level profile and a public-portfolio vehicle for graduate positioning.'},
+
+  {id:'itrain',year:2,title:'Industrial Training',code:'NB-SOCE-L4-SE-SK-02',cr:5,type:'skl',typeLabel:'Pathway / Skills',
+   role:'Workplace competence, delivered as a placement block outside teaching weeks (1 credit = 100 hours).',
+   feeds:[{to:'cu_project',soft:true,note:'professional practice and workplace competence, not taught content'}],
+   covers:'Supervised industry placement; induction; workplace competence; reporting and viva.',
+   excludes:'Taught pathway content.',
+   exit:'Workplace-competence evidence central to the HND-level profile.'}
+];
+
+/* ---- indexes ---- */
+const M = {}; MODS.forEach(m=>M[m.id]=m);
+const colOf = id => M[id] ? (M[id].year===1?0:1) : (CU[id].lvl===5?2:3);
+const nameOf = id => M[id]? M[id].title : CU[id].title;
+const codeOf = id => CU[id]? CU[id].code : null;
+const crText = m => m.noncredit? 'Non-credit' : (m.cr+' cr');
+
+const revIndex = {};
+MODS.forEach(m=> m.feeds.forEach(f=>{
+  (revIndex[f.to] = revIndex[f.to]||[]).push({from:m.id, soft:f.soft, note:f.note});
+}));
+
+const typeName = {cmn:'Common - institution-wide', csc:'Common - computing cluster', swe:'Pathway - taught', int:'Integrative skills', skl:'Pathway - project / placement'};
+
+/* ============================================================ RENDER - spine chips ============================================================ */
+const cols = [document.getElementById('col0'),document.getElementById('col1'),document.getElementById('col2'),document.getElementById('col3')];
+const chipEls = {};
+function addSub(col,label){const d=document.createElement('div');d.className='subhead';d.textContent=label;col.appendChild(d);}
+
+addSub(cols[0],'Common core - Tier 1');
+['foc','math','algo','deld'].forEach(id=>mkChip(M[id],0));
+addSub(cols[0],'Common core - Tier 2');
+['prog','dmms'].forEach(id=>mkChip(M[id],0));
+addSub(cols[0],'Pathway (bridging set)');
+['sesa','saf','waf'].forEach(id=>mkChip(M[id],0));
+addSub(cols[0],'Integrative skills');
+['ecs1','cproj'].forEach(id=>mkChip(M[id],0));
+
+addSub(cols[1],'Common core');
+['pdsa1'].forEach(id=>mkChip(M[id],1));
+addSub(cols[1],'Pathway - taught');
+['ead','wcad','mad1','sqt','uxid','iot','aiad','bpmp'].forEach(id=>mkChip(M[id],1));
+addSub(cols[1],'Integrative skills');
+['crest','ecs2'].forEach(id=>mkChip(M[id],1));
+addSub(cols[1],'Pathway - project / placement');
+['cap','itrain'].forEach(id=>mkChip(M[id],1));
+
+function mkChip(m,ci){
+  const el=document.createElement('div');
+  el.className='chip t-'+m.type; el.dataset.id=m.id;
+  const brg = m.bridge? '<span class="brg">BRIDGE</span>':'';
+  const crb = m.noncredit? '<span class="brg" style="background:var(--dgrey)">NON-CREDIT</span>' : `<span class="cr-badge">${m.cr} cr</span>`;
+  el.innerHTML=`<div class="ncode">${m.code}</div><div class="ct">${m.title}</div>
+    <div class="cmeta">${crb}<span>${m.typeLabel.replace('Common / ','').replace('Pathway / ','')}</span>${brg}</div>`;
+  el.addEventListener('click',ev=>{ev.stopPropagation();select(m.id);});
+  cols[ci].appendChild(el); chipEls[m.id]=el;
+}
+function cuGroup(col,ids,label){
+  addSub(col,label);
+  ids.forEach(id=>{
+    const c=CU[id];
+    const el=document.createElement('div');
+    el.className='chip t-cu'; el.dataset.id=id;
+    el.innerHTML=`<div class="code">${c.code}</div><div class="ct">${c.title}</div><div class="cmeta"><span class="cr-badge">${c.cr} CATS</span></div>`;
+    el.addEventListener('click',ev=>{ev.stopPropagation();select(id);});
+    col.appendChild(el); chipEls[id]=el;
+  });
+}
+cuGroup(cols[2],['cu_agile','cu_dux','cu_pdsa2'],'Semester 1');
+cuGroup(cols[2],['cu_cyber','cu_ds','cu_ecs3','cu_ethics'],'Semester 2');
+cuGroup(cols[3],['cu_ssec','cu_webapi','cu_mad2'],'Semester 1');
+cuGroup(cols[3],['cu_se2','cu_project','cu_lead'],'Semester 2');
+
+/* ============================================================ SVG link drawing ============================================================ */
+const svg=document.getElementById('linkLayer');
+const spine=document.getElementById('spine');
+const NS='http://www.w3.org/2000/svg';
+svg.innerHTML=`<defs>
+  <marker id="arrDown" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#EB5600"/></marker>
+  <marker id="arrUp" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#1A9988"/></marker>
+</defs>`;
+function clearLines(){[...svg.querySelectorAll('path')].forEach(p=>p.remove());}
+function drawEdge(fromId,toId,dir,soft){
+  const a=chipEls[fromId], b=chipEls[toId];
+  if(!a||!b) return;
+  const base=spine.getBoundingClientRect();
+  const ra=a.getBoundingClientRect(), rb=b.getBoundingClientRect();
+  const ca=colOf(fromId), cb=colOf(toId);
+  let x1,y1,x2,y2,d;
+  if(ca===cb){
+    x1=ra.right-base.left; y1=ra.top-base.top+ra.height/2;
+    x2=rb.right-base.left; y2=rb.top-base.top+rb.height/2;
+    const bow=46; d=`M ${x1} ${y1} C ${x1+bow} ${y1}, ${x2+bow} ${y2}, ${x2} ${y2}`;
+  } else {
+    x1=ra.right-base.left; y1=ra.top-base.top+ra.height/2;
+    x2=rb.left-base.left;  y2=rb.top-base.top+rb.height/2;
+    const dx=(x2-x1)*0.42; d=`M ${x1} ${y1} C ${x1+dx} ${y1}, ${x2-dx} ${y2}, ${x2} ${y2}`;
+  }
+  const p=document.createElementNS(NS,'path');
+  p.setAttribute('d',d); p.setAttribute('fill','none');
+  p.setAttribute('stroke',dir==='down'?'#EB5600':'#1A9988');
+  p.setAttribute('stroke-width', soft?'1.6':'2.2');
+  p.setAttribute('opacity', soft?'0.72':'0.92');
+  if(soft) p.setAttribute('stroke-dasharray','5 4');
+  p.setAttribute('marker-end', dir==='down'?'url(#arrDown)':'url(#arrUp)');
+  svg.appendChild(p);
+}
+
+/* ============================================================ selection ============================================================ */
+let selId=null;
+function select(id){
+  selId=id;
+  Object.values(chipEls).forEach(el=>el.classList.remove('sel','up','down','dim'));
+  clearLines();
+  const m=M[id];
+  const downstream = m ? m.feeds.map(f=>({id:f.to,soft:f.soft,note:f.note})) : [];
+  const upstream = (revIndex[id]||[]).map(r=>({id:r.from,soft:r.soft,note:r.note}));
+  const related=new Set([id]);
+  downstream.forEach(d=>related.add(d.id)); upstream.forEach(u=>related.add(u.id));
+  Object.entries(chipEls).forEach(([cid,el])=>{ if(!related.has(cid)) el.classList.add('dim'); });
+  chipEls[id].classList.add('sel');
+  downstream.forEach(d=>{chipEls[d.id]&&chipEls[d.id].classList.add('down'); drawEdge(id,d.id,'down',d.soft);});
+  upstream.forEach(u=>{chipEls[u.id]&&chipEls[u.id].classList.add('up'); drawEdge(u.id,id,'up',u.soft);});
+  document.getElementById('selNote').textContent = 'Showing lineage for: '+nameOf(id);
+  openPanel(id,upstream,downstream);
+}
+function relRow(o,dir){
+  const code=codeOf(o.id);
+  const codeHtml = code? `<span class="rcode">${code}</span> `:'';
+  const note = o.note? ` <span class="rnote">- ${o.note}</span>`:'';
+  const soft = o.soft? ` <span class="soft">indicative</span>`:'';
+  return `<div class="rel-item ${dir}">${codeHtml}<span class="rname">${nameOf(o.id)}</span>${note}${soft}</div>`;
+}
+function openPanel(id,up,down){
+  const isCU = !!CU[id];
+  document.getElementById('pTitle').textContent = (isCU? CU[id].code+' - ':'')+nameOf(id);
+  const tags=[];
+  if(isCU){ tags.push(`<span class="tag type tt-swe" style="background:var(--orange)">Coventry Level ${CU[id].lvl}</span>`); tags.push(`<span class="tag cr">${CU[id].cr} CATS</span>`); tags.push(`<span class="tag cr">${CU[id].sem}</span>`);}
+  else{
+    const m=M[id];
+    tags.push(`<span class="tag type tt-${m.type}">${typeName[m.type]}</span>`);
+    tags.push(`<span class="tag cr">${m.noncredit?'Non-credit (mandatory)':m.cr+' credits'}</span>`);
+    tags.push(`<span class="tag cr">${m.code}</span>`);
+    if(m.bridge) tags.push(`<span class="tag brg">Bridging module</span>`);
+  }
+  document.getElementById('pTags').innerHTML=tags.join('');
+  document.getElementById('pUp').innerHTML = up.length? up.map(o=>relRow(o,'up')).join('') : '<div style="font-size:12px;color:#9098a0">Entry-level module - no prior module required.</div>';
+  document.getElementById('pDown').innerHTML = down.length? down.map(o=>relRow(o,'down')).join('') : (isCU? '<div style="font-size:12px;color:#9098a0">Final validated destination.</div>':'<div style="font-size:12px;color:#9098a0">Terminal in this map.</div>');
+  document.getElementById('pCovers').textContent = isCU? 'Delivered and specified by Coventry University under the validation agreement.' : M[id].covers;
+  document.getElementById('pExcl').textContent = isCU? '-' : M[id].excludes;
+  document.getElementById('panel').classList.add('open');
+}
+function reset(){
+  selId=null; clearLines();
+  Object.values(chipEls).forEach(el=>el.classList.remove('sel','up','down','dim'));
+  document.getElementById('selNote').textContent='';
+  document.getElementById('panel').classList.remove('open');
+}
+document.getElementById('resetBtn').addEventListener('click',reset);
+spine.addEventListener('click',reset);
+window.addEventListener('resize',()=>{ if(selId) select(selId); });
+
+/* ============================================================ RENDER - detail cards ============================================================ */
+const host=document.getElementById('cardsHost');
+function feedLine(m){
+  const parts=m.feeds.map(f=>{
+    const code=codeOf(f.to);
+    const nm = code? `<span class="cu-ref">${code}</span> ${nameOf(f.to)}` : nameOf(f.to);
+    const soft=f.soft?' <span class="softtag">indicative</span>':'';
+    return `<span class="f">${nm}${soft}</span>`;
+  });
+  return parts.join('<span style="color:#c3c9cb">&nbsp;&middot;&nbsp;</span>');
+}
+function prereqLine(id){
+  const up=revIndex[id]||[];
+  if(!up.length) return '<span style="color:#9098a0">Entry-level - none</span>';
+  return up.map(u=>{
+    const soft=u.soft?' <span class="softtag">indicative</span>':'';
+    return nameOf(u.from)+soft;
+  }).join('<span style="color:#c3c9cb">&nbsp;&middot;&nbsp;</span>');
+}
+function renderCards(year){
+  const band=document.createElement('div'); band.className='yr-band';
+  band.textContent = year===1? 'Year 1 - Diploma stage (SLQF Level 3)':'Year 2 - HND stage (SLQF Level 4)';
+  host.appendChild(band);
+  const grid=document.createElement('div'); grid.className='cards';
+  MODS.filter(m=>m.year===year).forEach(m=>{
+    const el=document.createElement('div'); el.className='card t-'+m.type;
+    el.innerHTML=`
+      <div class="ncode">${m.code}</div>
+      <div class="c-top"><h3>${m.title}</h3><span class="c-cr">${crText(m)}</span></div>
+      <div class="c-tags"><span class="tag type tt-${m.type}">${typeName[m.type]}</span>${m.bridge?'<span class="tag brg">Bridging module</span>':''}${m.noncredit?'<span class="tag" style="background:var(--dgrey);color:#fff">Non-credit</span>':''}</div>
+      ${m.role?`<div class="c-role">${m.role}</div>`:''}
+      <div class="grp feeds"><div class="lab"><span class="arrow up">&#9650;</span> Builds on</div><div class="val">${prereqLine(m.id)}</div></div>
+      <div class="grp feeds"><div class="lab"><span class="arrow">&#9660;</span> Feeds into</div><div class="val">${feedLine(m)}</div></div>
+      <div class="grp"><div class="covers-line"><b>Covers:</b> ${m.covers}</div></div>
+      <div class="grp"><div class="covers-line excl-line"><b>Excludes:</b> ${m.excludes}</div></div>
+      <div class="exit"><b>Exit-award relevance:</b> ${m.exit}</div>`;
+    grid.appendChild(el);
+  });
+  host.appendChild(grid);
+}
+renderCards(1); renderCards(2);
+
+/* ============================================================ RENDER - Coventry reverse table ============================================================ */
+const cuBody=document.getElementById('cuBody');
+function cuFeeders(id){
+  const up=revIndex[id]||[];
+  if(!up.length) return '<span class="none">No named Years 1-2 feeder - delivered as validated context.</span>';
+  const hard=up.filter(u=>!u.soft).map(u=>`<span class="fd">${nameOf(u.from)}</span>`);
+  const soft=up.filter(u=>u.soft).map(u=>`<span class="fd soft">${nameOf(u.from)} <span class="softtag">supporting</span></span>`);
+  return [...hard,...soft].join('<span style="color:#c3c9cb">&nbsp;&middot;&nbsp;</span>');
+}
+function cuRows(ids,label){
+  const lr=document.createElement('tr'); lr.className='lvl-row';
+  lr.innerHTML=`<td colspan="4">${label}</td>`; cuBody.appendChild(lr);
+  ids.forEach(id=>{const c=CU[id]; const tr=document.createElement('tr');
+    tr.innerHTML=`<td class="code">${c.code}</td><td class="cu-title">${c.title} <span class="sem">(${c.sem})</span></td><td class="cr">${c.cr} CATS</td><td class="feeders">${cuFeeders(id)}</td>`;
+    cuBody.appendChild(tr);});
+}
+cuRows(['cu_agile','cu_dux','cu_pdsa2','cu_cyber','cu_ds','cu_ecs3','cu_ethics'],'Level 5 - Year 3');
+cuRows(['cu_ssec','cu_webapi','cu_mad2','cu_se2','cu_project','cu_lead'],'Level 6 - Year 4');
+
+document.getElementById('foot').innerHTML =
+ 'Computer Science with Software Engineering - Feeder and Consumer Map, v8.1 (module records v2.3). Years 1 and 2 module architecture at design stage; Coventry FHEQ Levels 5 and 6 fixed by the validation agreement. '+
+ 'Credit values follow the SLQF (2015) basis of 50 notional hours per credit (Industrial Training 100). Credit values, hours distributions and assessment weightings are confirmed at module-specification stage. This document maps prerequisite and feeder relationships only. '+
+ 'Generated '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})+'.';
+</script>
+</body>
+</html>
