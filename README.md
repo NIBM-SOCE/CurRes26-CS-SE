@@ -90,7 +90,7 @@ Each row links to the governance descriptor: the polished, review-ready module d
 | NB-SOCE-L3-CM-TT-02 | Mathematical Thinking | Institution-wide common | 4 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-02_MathematicalThinking_Gov_v1.1.docx) |
 | NB-SOCE-L3-CM-TT-03 | Algorithmic Thinking | Institution-wide common | 3 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-03_AlgorithmicThinking_Gov_v1.1.docx) |
 | NB-SOCE-L3-CM-TT-04 | Digital Electronics and Logic Design | Institution-wide common | 3 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-04_DigitalElectronicsAndLogicDesign_Gov_v1.1.docx) |
-| NB-SOCE-L3-CC-TT-01 | Programming Concepts | Cluster common | 4 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-01_ProgrammingConcepts_Gov_v1.2.docx) |
+| NB-SOCE-L3-CC-TT-01 | Programming Concepts | Cluster common | 4 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-01_ProgrammingConcepts_Gov_v1.3.docx) |
 | NB-SOCE-L3-CC-TT-02 | Data Models and Management Systems | Cluster common | 4 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-02_DataModelsAndManagementSystems_Gov_v1.1.docx) |
 | NB-SOCE-L3-SE-TT-01 | Software Engineering and Systems Analysis | Pathway (SE) | 4 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-01_SoftwareEngineeringAndSystemsAnalysis_Gov_v1.0.docx) |
 | NB-SOCE-L3-SE-TT-02 | Software Architecture Foundations | Pathway (SE) | 3 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-02_SoftwareArchitectureFoundations_Gov_v1.0.docx) |
@@ -106,7 +106,7 @@ Each row links to the governance descriptor: the polished, review-ready module d
 
 | Code | Module | Type | Credits | Descriptor |
 |---|---|---|---|---|
-| NB-SOCE-L4-CC-TT-01 | Programming, Data Structures and Algorithms I | Cluster common | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CC-TT-01_PDSA_I_Gov_v1.2.docx) |
+| NB-SOCE-L4-CC-TT-01 | Programming, Data Structures and Algorithms I | Cluster common | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CC-TT-01_PDSA_I_Gov_v1.3.docx) |
 | NB-SOCE-L4-SE-TT-01 | Enterprise Application Development | Pathway (SE) | 4 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-01_EnterpriseApplicationDevelopment_Gov_v1.0.docx) |
 | NB-SOCE-L4-SE-TT-02 | Web and Cloud Application Development | Pathway (SE) | 4 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-02_WebAndCloudApplicationDevelopment_Gov_v1.0.docx) |
 | NB-SOCE-L4-SE-TT-03 | Mobile Application Development I | Pathway (SE) | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-03_MobileApplicationDevelopmentI_Gov_v1.1.docx) |
