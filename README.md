@@ -109,7 +109,7 @@ Each row links to the governance descriptor: the polished, review-ready module d
 | NB-SOCE-L4-CC-TT-01 | Programming, Data Structures and Algorithms I | Cluster common | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CC-TT-01_PDSA_I_Gov_v1.2.docx) |
 | NB-SOCE-L4-SE-TT-01 | Enterprise Application Development | Pathway (SE) | 4 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-01_EnterpriseApplicationDevelopment_Gov_v1.0.docx) |
 | NB-SOCE-L4-SE-TT-02 | Web and Cloud Application Development | Pathway (SE) | 4 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-02_WebAndCloudApplicationDevelopment_Gov_v1.0.docx) |
-| NB-SOCE-L4-SE-TT-03 | Mobile Application Development I | Pathway (SE) | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-03_MobileApplicationDevelopmentI_Gov_v1.0.docx) |
+| NB-SOCE-L4-SE-TT-03 | Mobile Application Development I | Pathway (SE) | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-03_MobileApplicationDevelopmentI_Gov_v1.1.docx) |
 | NB-SOCE-L4-SE-TT-04 | Software Quality and Testing | Pathway (SE) | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-04_SoftwareQualityAndTesting_Gov_v1.0.docx) |
 | NB-SOCE-L4-SE-TT-05 | User Experience and Interaction Design | Pathway (SE) | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-05_UserExperienceAndInteractionDesign_Gov_v1.0.docx) |
 | NB-SOCE-L4-SE-TT-06 | IoT Application Development | Pathway (SE) | 2 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-06_IoTApplicationDevelopment_Gov_v1.0.docx) |
