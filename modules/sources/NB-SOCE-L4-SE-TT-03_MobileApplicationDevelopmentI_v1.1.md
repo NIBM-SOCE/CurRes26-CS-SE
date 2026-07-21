@@ -1,7 +1,7 @@
 # Module Descriptor - Mobile Application Development I
 
-**Code:** NB-SOCE-L4-SE-TT-03  ·  **Tier:** Pathway (SE)  ·  **Type:** Pathway / Taught  ·  **Status:** Draft for Review v1.0  ·  **Date:** 20 Jul 2026
-**Sources:** NIBM_SOCE_SE_ModuleRecords_Y12 v2.3; 00_Master_Decisions.md v2.5 (V13 working-languages register - this descriptor records the SE-thread platform-language decision delegated there); 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.1
+**Code:** NB-SOCE-L4-SE-TT-03  ·  **Tier:** Pathway (SE)  ·  **Type:** Pathway / Taught  ·  **Status:** Draft for Review v1.1  ·  **Date:** 21 Jul 2026
+**Sources:** NIBM_SOCE_SE_ModuleRecords_Y12 v2.3; 00_Master_Decisions.md v2.5 (V13 working-languages register - this descriptor records the SE-thread platform-language decision delegated there); 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.1; Descriptor Edit Note - Mobile Application Development I (CS SE pathway composition analysis finding, 21 Jul 2026)
 
 > **Items requiring confirmation at review:** (1) the learning-outcome set (canonical device: authored here from the record v2.3 stubs with the Level 4 register and the analytical-outcome cluster rule applied; ratified into the record set on confirmation); (2) **the platform-language decision - Kotlin on Android - recorded in Section 4 with its reasoning and named costs; ratification here also reports the decision for adoption into the V13 working-languages register at reconciliation**; (3) assessment attributes and weightings at sign-off, including the no-examination stance stated in Section 5; (4) syllabus hour allocations; (5) indicative reading (Kotlin-dependent entries); (6) staffing names.
 
@@ -36,10 +36,10 @@ The module builds native mobile development for the CS(SE) vertical and is the d
 |---|---|---|
 | LO1 | Build a functional mobile application for the target platform | Apply (Bloom); K-SAM 2, 7 |
 | LO2 | Apply introductory design patterns in the mobile context, analysing their fit to a given application structure | Analyse / Apply (Bloom); K-SAM 1, 2, 5 |
-| LO3 | Construct a mobile user interface following platform conventions | Apply (Bloom); K-SAM 2 |
+| LO3 | Construct an event-driven mobile user interface following platform conventions | Apply (Bloom); K-SAM 2 |
 | LO4 | Integrate a local database and consume a RESTful API within a mobile application | Apply (Bloom); K-SAM 2, 7 |
 
-**LO provenance note (canonical device):** the set above is authored from the record v2.3 indicative stubs, with the record's compound LO2 split into pattern work (LO2) and UI construction (LO3) for assessability. LO2 absorbs the analytical dimension required by the Level 4 cluster rule ("analysing their fit to a given application structure" per the Level 4 descriptor row 1). No verb exceeds the Level 4 cognitive ladder; no K-SAM category 7 defence is required. On ratification the carrying register inherits this set verbatim; SLQF-04 for this module closes at that point.
+**LO provenance note (canonical device):** the set above is authored from the record v2.3 indicative stubs, with the record's compound LO2 split into pattern work (LO2) and UI construction (LO3) for assessability. At v1.1, user-interaction event handling is named in U2 and LO3 is worded "event-driven" - a pre-ratification naming refinement at the LO/syllabus layer (sourced from the composition-analysis finding, 21 Jul 2026); lifecycle events remain in U1, the MVVM carve is untouched, and no boundary text changes. LO2 absorbs the analytical dimension required by the Level 4 cluster rule ("analysing their fit to a given application structure" per the Level 4 descriptor row 1). No verb exceeds the Level 4 cognitive ladder; no K-SAM category 7 defence is required. On ratification the carrying register inherits this set verbatim; SLQF-04 for this module closes at that point.
 
 ### Integrative Points and Seams
 
@@ -61,7 +61,7 @@ The module builds native mobile development for the CS(SE) vertical and is the d
 | Unit | Content | Lecture hours |
 |---|---|---|
 | U1 | The mobile platform: Android application structure; activities and the lifecycle; Kotlin for Java programmers (the managed transition) | 9 |
-| U2 | UI construction for mobile: layouts and components; navigation; platform UI conventions and responsive behaviour on device | 12 |
+| U2 | UI construction for mobile: layouts and components; event handling; navigation; platform UI conventions and responsive behaviour on device | 12 |
 | U3 | Introductory design patterns in the mobile context: separation of concerns; adapter and observer patterns in interface work | 9 |
 | U4 | Database integration: local persistence within the mobile application (SQL fluency assumed) | 9 |
 | U5 | RESTful API consumption: networking on device; parsing and presenting remote data (consumption level) | 9 |
@@ -115,3 +115,4 @@ No examination is carried by design: the assessed capability is demonstrated bui
 | Version | Date | Amendment | Authority |
 |---|---|---|---|
 | 1.0 | 20 Jul 2026 | Initial descriptor | SE descriptor thread |
+| 1.1 | 21 Jul 2026 | U2 event-handling naming; LO3 "event-driven" wording (pre-ratification edit, composition-analysis finding) | SE descriptor thread |
