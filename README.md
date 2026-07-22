@@ -2,13 +2,13 @@
 
 Governance repository for the Years 1 and 2 module descriptors of the Computer Science with Software Engineering pathway, produced under NIBM's School of Computing and Engineering (SOCE) curriculum restructuring initiative, CurRes26.
 
-This repository holds the governance-ready module descriptors for CS(SE) only. CS(SE) is one of four pathways in the restructured BSc Computer Science with Software Engineering programme; the others (Computer Science with Artificial Intelligence and Data Science, Information Technology for Business, and Network Engineering and Cybersecurity) are governed and versioned separately.
+This repository holds the governance-ready module descriptors for the Software Engineering (SE) pathway, together with the institution-wide common modules shared across the programme. SE is one of four pathways in the restructured BSc programme; the others (Computer Science with Artificial Intelligence and Data Science, Information Technology for Business, and Network Engineering and Cybersecurity) are governed and versioned separately.
 
 ---
 
 ## 1. Programme Context
 
-The BSc Computer Science with Software Engineering programme is delivered in two stages:
+The programme is delivered in two stages:
 
 - **Years 1 and 2** are governed by NIBM under the Sri Lanka Qualifications Framework (SLQF). This is the scope of this repository.
 - **Years 3 and 4** are delivered in partnership with Coventry University under the UK Framework for Higher Education Qualifications (FHEQ), leading to a BSc (Hons) award. Years 3 and 4 are outside this repository; they are referenced here only for continuity.
@@ -21,7 +21,7 @@ The BSc Computer Science with Software Engineering programme is delivered in two
 | Year 2 (exit) | Higher Diploma level | Level 5 | NVQ Level 6 (target) | Higher National Diploma in Computer Science with Software Engineering |
 | Years 3-4 (Coventry) | Bachelors Honours level | Levels 5-6 | n/a | BSc (Hons) Computer Science with Software Engineering |
 
-"Higher National Diploma" is the award-certificate term; SLQF itself uses "Higher Diploma" for the same level. Both are used, with the SLQF level stated alongside.
+"Higher National Diploma" is the award-certificate term; SLQF itself uses "Higher Diploma" for the same level. Both are used, with the SLQF level stated alongside. Final exit-certificate wording is being settled as part of exit-award finalisation; the titles above are the working form.
 
 **TVEC accreditation:** TVEC accreditation is being actively pursued and has not yet been granted. The NVQ-level targets above, and any other TVEC/NVQ-facing mappings referenced from this programme, are targets that may be adjusted once TVEC confirms its specific requirements. SLQF conventions are binding now, independently of that outcome. Any exit-award or accreditation language should carry this caveat until TVEC's requirements are final.
 
@@ -65,12 +65,26 @@ The exit block applies only to students exiting the programme at Higher National
 
 ### Why Year 2 Is Shaped This Way
 
-Year 2's taught set went through a deliberate restructuring, worth explaining rather than just listing:
+Year 2's taught set was built to a clear brief, worth explaining rather than just listing:
 
-- **Cloud content sits inside Web and Cloud Application Development** rather than as a separate module. The reasoning is that cloud deployment deepens a thread the module already owns (build, deploy, operate a web application); teaching cloud as its own topic would have duplicated that thread rather than extended it. The discipline held at this stage is "cloud as delivery target, not topic."
-- **IoT Application Development stands alone** as a focused, software-scoped module. It is viable as a standalone precisely because Digital Electronics and Logic Design now exists as a Year 1 common: hardware literacy is taught there, so this module can concentrate on connected-device backends, APIs and data handling without also having to carry electronics foundations.
-- **Business and Project Management Practice is new.** It restores dedicated, credit-bearing project-management and business content to the Higher National Diploma profile, content that had previously sat inside CREST before CREST became a non-credit component. The two credits for this module were found honestly: one from the former combined Cloud and IoT module (once cloud moved into Web and Cloud Application Development and IoT was resized to 2 credits) and one from a trim to Mobile Application Development I, whose lost ground is picked up by the surrounding software-architecture and API-focused modules.
-- **AI-Enabled Application Development builds a genuinely valuable, in-demand skill: integrating AI capabilities into real software.** Students learn to bring models, APIs and AI services into working applications, complementing rather than duplicating the AI&DS pathway, which owns model-building and theory depth. **IoT Application Development gives students the applied skill of building connected-device backends, APIs and data integrations**, building directly on the hardware literacy already established in Digital Electronics and Logic Design.
+- **Cloud is taught as a delivery skill inside Web and Cloud Application Development.** Students learn to build, deploy and operate a web application end to end, so cloud arrives as the natural completion of work they already own rather than as a separate topic studied in isolation. The discipline held here is "cloud as delivery target, not topic."
+- **AI-Enabled Application Development builds a genuinely valuable, in-demand skill: integrating AI capabilities into real software.** Students learn to bring models, APIs and AI services into working applications, complementing rather than duplicating the AI&DS pathway, which owns model-building and theory depth.
+- **IoT Application Development gives students the applied skill of building connected-device backends, APIs and data integrations.** It works as a focused, software-scoped module precisely because hardware literacy is already established in Digital Electronics and Logic Design, so the module concentrates fully on the software side of connected devices.
+- **Business and Project Management Practice restores dedicated, credit-bearing project-management and business content** to the Higher National Diploma profile, giving students the delivery, planning and commercial skills that employers expect alongside technical capability.
+- **Software Quality and Testing and User Experience and Interaction Design round out the professional profile.** Between them students gain the testing discipline and the user-centred design judgement that separate a working build from a product fit to ship.
+
+### Working Languages
+
+Language choices across the pathway are deliberate and sequenced rather than left to individual modules:
+
+| Strand | Working language | Modules |
+|---|---|---|
+| Core programming spine | Java | Programming Concepts; Programming, Data Structures and Algorithms I; Enterprise Application Development |
+| Web and connected devices | JavaScript (client and server, with Node) | Web Application Foundations; Web and Cloud Application Development; IoT Application Development |
+| Native mobile | Kotlin on Android | Mobile Application Development I |
+| Applied AI integration | Java or JavaScript, per application context | AI-Enabled Application Development |
+
+Two points of governance interest. First, Programming Concepts and Programming, Data Structures and Algorithms I are shared cluster modules whose working language is the single parameter that varies by pathway: SE runs them in Java, and the AI&DS pathway runs them in Python. Title, code, credits, boundary, learning outcomes, syllabus structure, hour allocations and assessment structure are identical across both instantiations, and assessment runs from a common specification with language-equivalent task banks moderated across pathways. Second, Kotlin was chosen for mobile because it is JVM-based and Java-interoperable, making the transition from the Java spine the cheapest available and teachable within the module; the alternative of a cross-platform framework would either have introduced a third language or bound mobile work to the web stack.
 
 ### Years 3 and 4
 
@@ -80,25 +94,27 @@ Progression continues at Coventry University under FHEQ Levels 5 and 6, leading 
 
 Each row links to the governance descriptor: the polished, review-ready module descriptor document. These are the authoritative version of each module's identity, learning outcomes, curriculum, assessment and staffing arrangement.
 
+The four Tier 1 commons, the cluster commons, the Integrative Skills modules and the exit-block modules are shared across pathways and maintained here as the central set; the other pathway repositories link to this page for them.
+
 ### Year 1 - Diploma Stage
 
 <sub>37 credits · 1,850 notional hours</sub>
 
 | Code | Module | Type | Credits | Descriptor |
 |---|---|---|---|---|
-| NB-SOCE-L3-CM-TT-01 | Fundamentals of Computing | Institution-wide common | 4 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-01_FundamentalsOfComputing_Gov_v1.1.docx) |
-| NB-SOCE-L3-CM-TT-02 | Mathematical Thinking | Institution-wide common | 4 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-02_MathematicalThinking_Gov_v1.1.docx) |
-| NB-SOCE-L3-CM-TT-03 | Algorithmic Thinking | Institution-wide common | 3 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-03_AlgorithmicThinking_Gov_v1.1.docx) |
-| NB-SOCE-L3-CM-TT-04 | Digital Electronics and Logic Design | Institution-wide common | 3 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-04_DigitalElectronicsAndLogicDesign_Gov_v1.1.docx) |
-| NB-SOCE-L3-CC-TT-01 | Programming Concepts | Cluster common | 4 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-01_ProgrammingConcepts_Gov_v1.3.docx) |
-| NB-SOCE-L3-CC-TT-02 | Data Models and Management Systems | Cluster common | 4 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-02_DataModelsAndManagementSystems_Gov_v1.1.docx) |
-| NB-SOCE-L3-SE-TT-01 | Software Engineering and Systems Analysis | Pathway (SE) | 4 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-01_SoftwareEngineeringAndSystemsAnalysis_Gov_v1.0.docx) |
-| NB-SOCE-L3-SE-TT-02 | Software Architecture Foundations | Pathway (SE) | 3 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-02_SoftwareArchitectureFoundations_Gov_v1.0.docx) |
-| NB-SOCE-L3-SE-TT-03 | Web Application Foundations | Pathway (SE) | 3 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-03_WebApplicationFoundations_Gov_v1.0.docx) |
-| NB-SOCE-L3-CM-IS-01 | Effective Communication Skills I | Integrative Skills | 2 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-01_EffectiveCommunicationSkillsI_Gov_v1.0.docx) |
-| NB-SOCE-L3-CM-IS-02 | Creative Project | Integrative Skills | 3 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-02_CreativeProject_Gov_v1.0.docx) |
-| NB-SOCE-L3-CM-IS-03 | Industry Horizons | Exit Block (Diploma) | 2 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-03_IndustryHorizons_Gov_v1.0.docx) |
-| NB-SOCE-L3-CM-IS-04 | Professional Practice Foundations | Exit Block (Diploma) | 2 | [Descriptor](modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-04_ProfessionalPracticeFoundations_Gov_v1.0.docx) |
+| NB-SOCE-L3-CM-TT-01 | Fundamentals of Computing | Institution-wide common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-01_FundamentalsOfComputing_Gov_v1.1.docx) |
+| NB-SOCE-L3-CM-TT-02 | Mathematical Thinking | Institution-wide common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-02_MathematicalThinking_Gov_v1.1.docx) |
+| NB-SOCE-L3-CM-TT-03 | Algorithmic Thinking | Institution-wide common | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-03_AlgorithmicThinking_Gov_v1.1.docx) |
+| NB-SOCE-L3-CM-TT-04 | Digital Electronics and Logic Design | Institution-wide common | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-04_DigitalElectronicsAndLogicDesign_Gov_v1.1.docx) |
+| NB-SOCE-L3-CC-TT-01 | Programming Concepts | Cluster common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-01_ProgrammingConcepts_Gov_v1.3.docx) |
+| NB-SOCE-L3-CC-TT-02 | Data Models and Management Systems | Cluster common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-02_DataModelsAndManagementSystems_Gov_v1.1.docx) |
+| NB-SOCE-L3-SE-TT-01 | Software Engineering and Systems Analysis | Pathway (SE) | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-01_SoftwareEngineeringAndSystemsAnalysis_Gov_v1.0.docx) |
+| NB-SOCE-L3-SE-TT-02 | Software Architecture Foundations | Pathway (SE) | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-02_SoftwareArchitectureFoundations_Gov_v1.0.docx) |
+| NB-SOCE-L3-SE-TT-03 | Web Application Foundations | Pathway (SE) | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-03_WebApplicationFoundations_Gov_v1.1.docx) |
+| NB-SOCE-L3-CM-IS-01 | Effective Communication Skills I | Integrative Skills | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-01_EffectiveCommunicationSkillsI_Gov_v1.0.docx) |
+| NB-SOCE-L3-CM-IS-02 | Creative Project | Integrative Skills | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-02_CreativeProject_Gov_v1.0.docx) |
+| NB-SOCE-L3-CM-IS-03 | Industry Horizons | Exit Block (Diploma) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-03_IndustryHorizons_Gov_v1.0.docx) |
+| NB-SOCE-L3-CM-IS-04 | Professional Practice Foundations | Exit Block (Diploma) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-04_ProfessionalPracticeFoundations_Gov_v1.0.docx) |
 
 ### Year 2 - Higher Diploma Stage
 
@@ -106,27 +122,27 @@ Each row links to the governance descriptor: the polished, review-ready module d
 
 | Code | Module | Type | Credits | Descriptor |
 |---|---|---|---|---|
-| NB-SOCE-L4-CC-TT-01 | Programming, Data Structures and Algorithms I | Cluster common | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CC-TT-01_PDSA_I_Gov_v1.3.docx) |
-| NB-SOCE-L4-SE-TT-01 | Enterprise Application Development | Pathway (SE) | 4 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-01_EnterpriseApplicationDevelopment_Gov_v1.0.docx) |
-| NB-SOCE-L4-SE-TT-02 | Web and Cloud Application Development | Pathway (SE) | 4 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-02_WebAndCloudApplicationDevelopment_Gov_v1.0.docx) |
-| NB-SOCE-L4-SE-TT-03 | Mobile Application Development I | Pathway (SE) | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-03_MobileApplicationDevelopmentI_Gov_v1.1.docx) |
-| NB-SOCE-L4-SE-TT-04 | Software Quality and Testing | Pathway (SE) | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-04_SoftwareQualityAndTesting_Gov_v1.0.docx) |
-| NB-SOCE-L4-SE-TT-05 | User Experience and Interaction Design | Pathway (SE) | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-05_UserExperienceAndInteractionDesign_Gov_v1.0.docx) |
-| NB-SOCE-L4-SE-TT-06 | IoT Application Development | Pathway (SE) | 2 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-06_IoTApplicationDevelopment_Gov_v1.0.docx) |
-| NB-SOCE-L4-SE-TT-07 | AI-Enabled Application Development | Pathway (SE) | 3 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-07_AIEnabledApplicationDevelopment_Gov_v1.0.docx) |
-| NB-SOCE-L4-SE-TT-08 | Business and Project Management Practice | Pathway (SE) | 2 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-08_BusinessAndProjectManagementPractice_Gov_v1.0.docx) |
-| NB-SOCE-L4-SE-SK-01 | Capstone Project | Pathway (SE) | 5 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-SK-01_CapstoneProject_Gov_v1.0.docx) |
-| NB-SOCE-L4-SE-SK-02 | Industrial Training | Pathway (SE) | 5 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-SK-02_IndustrialTraining_Gov_v1.0.docx) |
-| NB-SOCE-L4-CM-IS-01 | Entrepreneurship, Creativity and Innovation (CREST) | Integrative Skills - non-credit, pass/fail | 0 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-01_CREST_Gov_v1.0.docx) |
-| NB-SOCE-L4-CM-IS-02 | Effective Communication Skills II | Integrative Skills | 2 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-02_EffectiveCommunicationSkillsII_Gov_v1.0.docx) |
-| NB-SOCE-L4-CM-IS-03 | Professional Standing and Career Strategy | Exit Block (HND) | 2 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-03_ProfessionalStandingAndCareerStrategy_Gov_v1.0.docx) |
-| NB-SOCE-L4-CM-IS-04 | Ethics and Responsibility in Computing Practice | Exit Block (HND) | 2 | [Descriptor](modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-04_EthicsAndResponsibilityInComputingPractice_Gov_v1.0.docx) |
+| NB-SOCE-L4-CC-TT-01 | Programming, Data Structures and Algorithms I | Cluster common | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CC-TT-01_PDSA_I_Gov_v1.3.docx) |
+| NB-SOCE-L4-SE-TT-01 | Enterprise Application Development | Pathway (SE) | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-01_EnterpriseApplicationDevelopment_Gov_v1.1.docx) |
+| NB-SOCE-L4-SE-TT-02 | Web and Cloud Application Development | Pathway (SE) | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-02_WebAndCloudApplicationDevelopment_Gov_v1.1.docx) |
+| NB-SOCE-L4-SE-TT-03 | Mobile Application Development I | Pathway (SE) | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-03_MobileApplicationDevelopmentI_Gov_v1.2.docx) |
+| NB-SOCE-L4-SE-TT-04 | Software Quality and Testing | Pathway (SE) | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-04_SoftwareQualityAndTesting_Gov_v1.1.docx) |
+| NB-SOCE-L4-SE-TT-05 | User Experience and Interaction Design | Pathway (SE) | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-05_UserExperienceAndInteractionDesign_Gov_v1.0.docx) |
+| NB-SOCE-L4-SE-TT-06 | IoT Application Development | Pathway (SE) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-06_IoTApplicationDevelopment_Gov_v1.1.docx) |
+| NB-SOCE-L4-SE-TT-07 | AI-Enabled Application Development | Pathway (SE) | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-07_AIEnabledApplicationDevelopment_Gov_v1.1.docx) |
+| NB-SOCE-L4-SE-TT-08 | Business and Project Management Practice | Pathway (SE) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-08_BusinessAndProjectManagementPractice_Gov_v1.0.docx) |
+| NB-SOCE-L4-SE-SK-01 | Capstone Project | Pathway (SE) | 5 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-SK-01_CapstoneProject_Gov_v1.0.docx) |
+| NB-SOCE-L4-SE-SK-02 | Industrial Training | Pathway (SE) | 5 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-SK-02_IndustrialTraining_Gov_v1.0.docx) |
+| NB-SOCE-L4-CM-IS-01 | Entrepreneurship, Creativity and Innovation (CREST) | Integrative Skills - non-credit, pass/fail | 0 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-01_CREST_Gov_v1.0.docx) |
+| NB-SOCE-L4-CM-IS-02 | Effective Communication Skills II | Integrative Skills | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-02_EffectiveCommunicationSkillsII_Gov_v1.0.docx) |
+| NB-SOCE-L4-CM-IS-03 | Professional Standing and Career Strategy | Exit Block (HND) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-03_ProfessionalStandingAndCareerStrategy_Gov_v1.0.docx) |
+| NB-SOCE-L4-CM-IS-04 | Ethics and Responsibility in Computing Practice | Exit Block (HND) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-04_EthicsAndResponsibilityInComputingPractice_Gov_v1.0.docx) |
 
 ## 6. Feeder and Consumer Map
 
-[Open the CS(SE) Feeder and Consumer Map](map/NIBM_SOCE_SE_FeederConsumerMap_v8_1.html)
+[Open the CS(SE) Feeder and Consumer Map](https://nibm-soce.github.io/CurRes26-CS-SE/map/NIBM_SOCE_SE_FeederConsumerMap_v8_1.html)
 
-An interactive view of how Year 1 and Year 2 modules feed into each other and into the Years 3-4 Coventry modules, and which modules each one draws on in turn. Download the file and open it in a browser to explore it.
+An interactive view of how Year 1 and Year 2 modules feed into each other and into the Years 3-4 Coventry modules, and which modules each one draws on in turn. It opens directly in the browser.
 
 ## 7. Repository Structure
 
@@ -145,4 +161,4 @@ The `modules/sources` directory holds the working markdown behind each descripto
 
 ## 8. Status and Conventions
 
-Descriptors in this repository are issued as governance-ready drafts for review. Where a descriptor still has an open item (for example, a learning-outcome set or an assessment weighting awaiting confirmation), that is stated explicitly within the descriptor itself. Documents follow UK English, Title Case module titles, and a table-first presentation throughout.
+Descriptors in this repository are issued as governance-ready drafts for review. Where a descriptor still has an open item (for example, a learning-outcome set, an assessment weighting or a staffing name awaiting confirmation), that is stated explicitly at the head of the descriptor itself. Documents follow UK English, Title Case module titles, and a table-first presentation throughout.
