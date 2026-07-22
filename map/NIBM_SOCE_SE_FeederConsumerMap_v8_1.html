@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SE Pathway - Feeder and Consumer Map</title>
+<title>Software Engineering Pathway - Feeder and Consumer Map</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -190,6 +190,10 @@
   .vchip{font-size:10.5px;font-weight:700;color:#fff;background:var(--orange);border-radius:3px;padding:2px 8px;letter-spacing:.03em;}
 </style>
 <body>
+<style>
+  .langb{font-size:9px;font-weight:700;color:#fff;background:#1A6E8E;border-radius:3px;padding:1px 5px;letter-spacing:.04em;}
+  .tag.langb{font-size:10px;padding:2px 7px;}
+</style>
 <div class="wrap">
 
   <!-- MASTHEAD -->
@@ -203,6 +207,7 @@
       <span><b>Validation partner:</b> Coventry University</span>
       <span><b>Architecture:</b> v8.1 (module records v2.3)</span>
       <span><b>Credit basis:</b> SLQF - 1 credit = 50 notional hours (Industrial Training = 100)</span>
+      <span><b>Working language:</b> Java (pathway instantiation of the cluster commons); JavaScript across the web vertical</span>
       <span><b>Diploma exit:</b> 41 credits / 13 modules</span>
       <span><b>HND exit:</b> 43 credits / 15 modules</span>
       <span><b>Status:</b> Governance submission</span>
@@ -235,6 +240,7 @@
           <span class="lg-title">Markers</span>
           <div class="lg-row"><span class="tagmini" style="background:var(--purple);color:#fff">BRIDGE</span> Inbound bridging module for transferring students</div>
           <div class="lg-row"><span class="tagmini" style="background:var(--dgrey);color:#fff">NON-CREDIT</span> Mandatory pass/fail component, no credit contribution</div>
+          <div class="lg-row"><span class="langb">JAVA</span> Cluster common taught in Java for this pathway (bound pair; language is the only parameter that varies)</div>
           <div class="lg-row"><span class="ncode" style="font-size:11px">NB-SOCE-L3-...</span> &nbsp;NIBM module code &nbsp;&middot;&nbsp; <span class="code" style="font-size:11px">NB0000CEM</span> Coventry module</div>
         </div>
       </div>
@@ -360,7 +366,7 @@ const MODS = [
    excludes:'Embedded-systems programming; electronics-engineering depth; pathway infrastructure content (the boundary with Operating Systems and Infrastructure is policed at specification stage).',
    exit:'Hardware literacy and analytical grounding in the Diploma-level profile.'},
 
-  {id:'prog',year:1,title:'Programming Concepts',code:'NB-SOCE-L3-CC-TT-01',cr:4,type:'csc',typeLabel:'Common / Taught',
+  {id:'prog',year:1,title:'Programming Concepts',code:'NB-SOCE-L3-CC-TT-01',cr:4,type:'csc',typeLabel:'Common / Taught',lang:'Java',
    role:'The load-bearing feeder of the pathway - the common language base for the Year 2 applied development set.',
    feeds:[{to:'sesa',note:'development experience to ground process'},{to:'saf'},{to:'waf',note:'general programming behind client-side scripting'},{to:'pdsa1',note:'language fluency'},{to:'ead'},{to:'wcad'},{to:'mad1',note:'object orientation'},{to:'sqt'},{to:'iot'},{to:'aiad'}],
    covers:'Programming fundamentals in a production language; control structures, functions and collections; object-oriented concepts; program design and debugging practice.',
@@ -410,7 +416,7 @@ const MODS = [
    exit:'Project and ownership evidence for the Diploma-level profile.'},
 
   /* ---------------- YEAR 2 (SLQF Level 4) ---------------- */
-  {id:'pdsa1',year:2,title:'Programming, Data Structures and Algorithms I',code:'NB-SOCE-L4-CC-TT-01',cr:3,type:'csc',typeLabel:'Common / Taught',
+  {id:'pdsa1',year:2,title:'Programming, Data Structures and Algorithms I',code:'NB-SOCE-L4-CC-TT-01',cr:3,type:'csc',typeLabel:'Common / Taught',lang:'Java',
    role:'',
    feeds:[{to:'cu_pdsa2',note:'the direct numbered predecessor'}],
    covers:'Data structures (linked lists, trees, heaps, hash tables); core algorithm families; complexity (Big-O); introduction to concurrency and data-consistency concepts.',
@@ -545,7 +551,7 @@ function mkChip(m,ci){
   const brg = m.bridge? '<span class="brg">BRIDGE</span>':'';
   const crb = m.noncredit? '<span class="brg" style="background:var(--dgrey)">NON-CREDIT</span>' : `<span class="cr-badge">${m.cr} cr</span>`;
   el.innerHTML=`<div class="ncode">${m.code}</div><div class="ct">${m.title}</div>
-    <div class="cmeta">${crb}<span>${m.typeLabel.replace('Common / ','').replace('Pathway / ','')}</span>${brg}</div>`;
+    <div class="cmeta">${crb}<span>${m.typeLabel.replace('Common / ','').replace('Pathway / ','')}</span>${brg}${m.lang?'<span class="langb">'+m.lang.toUpperCase()+'</span>':''}</div>`;
   el.addEventListener('click',ev=>{ev.stopPropagation();select(m.id);});
   cols[ci].appendChild(el); chipEls[m.id]=el;
 }
@@ -635,6 +641,7 @@ function openPanel(id,up,down){
     tags.push(`<span class="tag type tt-${m.type}">${typeName[m.type]}</span>`);
     tags.push(`<span class="tag cr">${m.noncredit?'Non-credit (mandatory)':m.cr+' credits'}</span>`);
     tags.push(`<span class="tag cr">${m.code}</span>`);
+    if(m.lang) tags.push(`<span class="tag langb">Working language: ${m.lang}</span>`);
     if(m.bridge) tags.push(`<span class="tag brg">Bridging module</span>`);
   }
   document.getElementById('pTags').innerHTML=tags.join('');
@@ -683,7 +690,7 @@ function renderCards(year){
     el.innerHTML=`
       <div class="ncode">${m.code}</div>
       <div class="c-top"><h3>${m.title}</h3><span class="c-cr">${crText(m)}</span></div>
-      <div class="c-tags"><span class="tag type tt-${m.type}">${typeName[m.type]}</span>${m.bridge?'<span class="tag brg">Bridging module</span>':''}${m.noncredit?'<span class="tag" style="background:var(--dgrey);color:#fff">Non-credit</span>':''}</div>
+      <div class="c-tags"><span class="tag type tt-${m.type}">${typeName[m.type]}</span>${m.bridge?'<span class="tag brg">Bridging module</span>':''}${m.lang?'<span class="tag langb">'+m.lang+'</span>':''}${m.noncredit?'<span class="tag" style="background:var(--dgrey);color:#fff">Non-credit</span>':''}</div>
       ${m.role?`<div class="c-role">${m.role}</div>`:''}
       <div class="grp feeds"><div class="lab"><span class="arrow up">&#9650;</span> Builds on</div><div class="val">${prereqLine(m.id)}</div></div>
       <div class="grp feeds"><div class="lab"><span class="arrow">&#9660;</span> Feeds into</div><div class="val">${feedLine(m)}</div></div>
