@@ -1,7 +1,7 @@
 # Module Descriptor - Web Application Foundations
 
-**Code:** NB-SOCE-L3-SE-TT-03  ·  **Tier:** Pathway (SE)  ·  **Type:** Pathway / Taught  ·  **Status:** Draft for Review v1.0  ·  **Date:** 20 Jul 2026
-**Sources:** NIBM_SOCE_SE_ModuleRecords_Y12 v2.3; 00_Master_Decisions.md v2.5 (V13 working-languages register); 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.1
+**Code:** NB-SOCE-L3-SE-TT-03  ·  **Tier:** Pathway (SE)  ·  **Type:** Pathway / Taught  ·  **Status:** Draft for Review v1.1  ·  **Date:** 21 Jul 2026
+**Sources:** NIBM_SOCE_SE_ModuleRecords_Y12 v2.3; 00_Master_Decisions.md v2.6 (V13 working-languages register, as amended by V14 pathway instantiation); 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.1
 
 > **Items requiring confirmation at review:** (1) the learning-outcome set (canonical device: authored here from the record v2.3 stubs; ratified into the record set on confirmation); (2) assessment attributes and weightings at sign-off, including the no-examination stance stated in Section 5; (3) syllabus hour allocations, and any laboratory-weighted shift within the A-3 adjustment rule (the record flags this module as laboratory-heavy); (4) indicative reading; (5) staffing names.
 
@@ -46,7 +46,7 @@ The module builds the first tier of the CS(SE) two-tier web vertical: how the we
 |---|---|
 | Web and Cloud Application Development (Year 2) | The tier boundary, quoted: "server-side JavaScript, Node.js, REST API design, asynchronous programming, API security and cloud delivery (Web and Cloud Application Development, Year 2)" |
 | Fundamentals of Computing | Co-supply declaration: the client-server and HTTP context assumed at Level 5 security is jointly underwritten with FoC's raised operational networks level (V3.1) |
-| Programming Concepts | Prerequisite: general programming behind client-side scripting; the working-language change from Java to JavaScript is a taught transition, not an assumed one |
+| Programming Concepts | Prerequisite: general programming behind client-side scripting; the working-language change from Java (the SE Year 1 instantiation of Programming Concepts, V14) to JavaScript is a taught transition, not an assumed one |
 
 ## 4. Curriculum and Delivery
 
@@ -57,11 +57,11 @@ The module builds the first tier of the CS(SE) two-tier web vertical: how the we
 | U1 | The web as a system: the client-server model; HTTP requests and responses; URLs, browsers and servers in outline | 6 |
 | U2 | HTML: document structure and semantics; forms; accessibility fundamentals | 9 |
 | U3 | CSS: selectors and the cascade; box model; layout with flexbox and grid; responsive basics | 12 |
-| U4 | Introductory JavaScript: values, control flow and functions in the browser context; the transition from the cluster working language | 12 |
+| U4 | Introductory JavaScript: values, control flow and functions in the browser context; the transition from Programming Concepts (Java under the SE pathway instantiation, V14) | 12 |
 | U5 | The document object model: selecting and manipulating elements; events and interactivity; introductory debugging with browser developer tools | 9 |
 | | **Total lecture hours** | **48** |
 
-**Language note (V13):** the working language is JavaScript, client-side tier; the CS(SE) web vertical is JavaScript client and server, with the server tier owned by Web and Cloud Application Development. U4 explicitly manages the transition from Java (Programming Concepts, the cluster working language). C/C++ exposure is not extended here.
+**Language note (V14):** the working language is JavaScript, client-side tier; the CS(SE) web vertical is JavaScript client and server, with the server tier owned by Web and Cloud Application Development. U4 explicitly manages the transition from Java (Programming Concepts under the SE pathway instantiation, V14). C/C++ exposure is not extended here.
 
 Sessions run as 3-hour blocks (16 sessions); the practical and laboratory allocation carries the build thread, and the record's laboratory-heavy flag may shift hours within the A-3 adjustment rule at confirmation.
 
@@ -111,3 +111,4 @@ No examination is carried by design: the assessed capability is demonstrated bui
 | Version | Date | Amendment | Authority |
 |---|---|---|---|
 | 1.0 | 20 Jul 2026 | Initial descriptor | SE descriptor thread |
+| 1.1 | 21 Jul 2026 | Working-language framing aligned to V14 pathway instantiation (retires "cluster working language"); no boundary or hour change | SE descriptor thread |

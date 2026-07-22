@@ -1,7 +1,7 @@
 # Module Descriptor - AI-Enabled Application Development
 
-**Code:** NB-SOCE-L4-SE-TT-07  ·  **Tier:** Pathway (SE)  ·  **Type:** Pathway / Taught  ·  **Status:** Draft for Review v1.0  ·  **Date:** 20 Jul 2026
-**Sources:** NIBM_SOCE_SE_ModuleRecords_Y12 v2.3; v8.1 Phase 2 Register v1.0 (D1 Exception Register, Section 7); 00_Master_Decisions.md v2.5 (V6 Applied Artificial Intelligence retitle; V13); 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.1
+**Code:** NB-SOCE-L4-SE-TT-07  ·  **Tier:** Pathway (SE)  ·  **Type:** Pathway / Taught  ·  **Status:** Draft for Review v1.1  ·  **Date:** 21 Jul 2026
+**Sources:** NIBM_SOCE_SE_ModuleRecords_Y12 v2.3; v8.1 Phase 2 Register v1.0 (D1 Exception Register, Section 7); 00_Master_Decisions.md v2.6 (V6 Applied Artificial Intelligence retitle; V13 as amended by V14); 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.1
 
 > **Items requiring confirmation at review:** (1) the learning-outcome set (canonical device: authored here from the record v2.3 stubs; ratified into the record set on confirmation); (2) the D1 exception restatement in Section 2 (use-not-build; first candidate for consolidation at external review; the shared-staffing delivery risk with AI&DS named under Section 6); (3) assessment attributes and weightings at sign-off, including the no-examination stance; (4) syllabus hour allocations, including the AI-assisted-development unit; (5) indicative reading; (6) staffing names, with the shared-staffing arrangement question resolved before delivery.
 
@@ -114,3 +114,4 @@ No examination is carried by design: the assessed capability is applied integrat
 | Version | Date | Amendment | Authority |
 |---|---|---|---|
 | 1.0 | 20 Jul 2026 | Initial descriptor | SE descriptor thread |
+| 1.1 | 21 Jul 2026 | Inherited-governance citation refreshed to master v2.6 (V13 as amended by V14); no material change | SE descriptor thread |

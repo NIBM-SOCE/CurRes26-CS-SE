@@ -1,7 +1,7 @@
 # Module Descriptor - Enterprise Application Development
 
-**Code:** NB-SOCE-L4-SE-TT-01  ·  **Tier:** Pathway (SE)  ·  **Type:** Pathway / Taught  ·  **Status:** Draft for Review v1.0  ·  **Date:** 20 Jul 2026
-**Sources:** NIBM_SOCE_SE_ModuleRecords_Y12 v2.3; 00_Master_Decisions.md v2.5 (V13 working-languages register); 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.1
+**Code:** NB-SOCE-L4-SE-TT-01  ·  **Tier:** Pathway (SE)  ·  **Type:** Pathway / Taught  ·  **Status:** Draft for Review v1.1  ·  **Date:** 21 Jul 2026
+**Sources:** NIBM_SOCE_SE_ModuleRecords_Y12 v2.3; 00_Master_Decisions.md v2.6 (V13 working-languages register, as amended by V14 pathway instantiation); 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.1
 
 > **Items requiring confirmation at review:** (1) the learning-outcome set (canonical device: authored here from the record v2.3 stubs with the Level 4 register and the analytical-outcome cluster rule applied; ratified into the record set on confirmation); (2) assessment attributes and weightings at sign-off, including the no-examination stance stated in Section 5; (3) syllabus hour allocations; (4) indicative reading, including the framework text (Spring Boot named indicatively; the delivery framework is confirmed at teaching-plan stage); (5) staffing names.
 
@@ -14,13 +14,13 @@
 | Scope / type | Pathway: CS(SE)  ·  Pathway / Taught |
 | SLQF level / credits | Level 4 (Year 2)  ·  4 credits  ·  200 notional hours |
 | Feeder targets (named) | NB6007CEM Web API Development (application construction); NB6034CEM Software Engineering 2 (large-scale solution build, applied design patterns, architecture in practice). Both claims STRENGTHEN under the SQL re-draw: students arrive SQL-fluent from Year 1 (V3.4), so the applied persistence work starts higher. |
-| Prerequisites | Software Architecture Foundations (structure in principle, which this module implements); Programming Concepts; Data Models and Management Systems (SQL fluency and DBMS use ASSUMED, not introduced) |
+| Prerequisites | Software Architecture Foundations (structure in principle, which this module implements); Programming Concepts (Java under the SE pathway instantiation, V14); Data Models and Management Systems (SQL fluency and DBMS use ASSUMED, not introduced). Inbound-transit note (V14): entrants transferring from a Python-based pathway arrive without Java and complete the self-paced Java transition pack attached by the SE inbound bridge before or alongside this module |
 | Delivery mode | Session-based: 3-hour blocks (V10); 22 lecture sessions plus tutorials, practicals and demonstration per the hours profile; laboratory-heavy |
 | Hours profile | Taught 4-credit (A-4), 05_Hours_Model.md v1.2 |
 
 ## 2. Module Purpose and Aims
 
-The module is where structure moves from principle to practice for the CS(SE) vertical: students who can explain architectural styles and reason about quality attributes now build an enterprise application that implements those judgments through software design patterns, framework-based development and applied persistence. The working language is Java (V13), continuing the Programming Concepts chain into the enterprise context. The module holds one of the pathway's two DevOps homes - continuous integration for enterprise builds - paired with the delivery pipeline owned by Web and Cloud Application Development. The scope limit is honest: SQL and DBMS fundamentals are assumed from Year 1, not re-taught; architectural theory stays in its Year 1 owner; web, API and cloud delivery, and testing depth, are each owned elsewhere in the pathway.
+The module is where structure moves from principle to practice for the CS(SE) vertical: students who can explain architectural styles and reason about quality attributes now build an enterprise application that implements those judgments through software design patterns, framework-based development and applied persistence. The working language is Java, continuing the Programming Concepts chain into the enterprise context (Java under the SE pathway instantiation, V14). The module holds one of the pathway's two DevOps homes - continuous integration for enterprise builds - paired with the delivery pipeline owned by Web and Cloud Application Development. The scope limit is honest: SQL and DBMS fundamentals are assumed from Year 1, not re-taught; architectural theory stays in its Year 1 owner; web, API and cloud delivery, and testing depth, are each owned elsewhere in the pathway.
 
 ### Specification Boundary (from the record set - QUOTED, never edited)
 
@@ -64,7 +64,7 @@ The module is where structure moves from principle to practice for the CS(SE) ve
 | U6 | Continuous integration for enterprise builds: build automation; automated checks in the integration pipeline | 9 |
 | | **Total lecture hours** | **66** |
 
-**Language note (V13):** the working language is Java, continuing the Programming Concepts chain; Spring Boot is the indicatively named framework, confirmed at teaching-plan stage. C/C++ exposure is not extended here.
+**Language note (V14):** the working language is Java, continuing the Programming Concepts chain (Java under the SE pathway instantiation); Spring Boot is the indicatively named framework, confirmed at teaching-plan stage. C/C++ exposure is not extended here.
 
 Sessions run as 3-hour blocks (22 sessions); the laboratory-heavy allocation carries a single evolving application build across U2-U6.
 
@@ -114,3 +114,4 @@ No examination is carried by design: the assessed capability is applied construc
 | Version | Date | Amendment | Authority |
 |---|---|---|---|
 | 1.0 | 20 Jul 2026 | Initial descriptor | SE descriptor thread |
+| 1.1 | 21 Jul 2026 | Prerequisite references the SE inbound Java transition pack for Python-based transfer entrants (V14); Java-continuity citation moved to V14 | SE descriptor thread |

@@ -1,7 +1,7 @@
 # Module Descriptor - Software Quality and Testing
 
-**Code:** NB-SOCE-L4-SE-TT-04  ·  **Tier:** Pathway (SE)  ·  **Type:** Pathway / Taught  ·  **Status:** Draft for Review v1.0  ·  **Date:** 20 Jul 2026
-**Sources:** NIBM_SOCE_SE_ModuleRecords_Y12 v2.3; NIBM_SOCE_ITB_ModuleRecords_Y12 v2.1 (seam counterpart, quoted); 00_Master_Decisions.md v2.5 (V13); 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.1
+**Code:** NB-SOCE-L4-SE-TT-04  ·  **Tier:** Pathway (SE)  ·  **Type:** Pathway / Taught  ·  **Status:** Draft for Review v1.1  ·  **Date:** 21 Jul 2026
+**Sources:** NIBM_SOCE_SE_ModuleRecords_Y12 v2.3; NIBM_SOCE_ITB_ModuleRecords_Y12 v2.1 (seam counterpart, quoted); 00_Master_Decisions.md v2.6 (V13 as amended by V14); 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.1
 
 > **Items requiring confirmation at review:** (1) the learning-outcome set (canonical device: authored here from the record v2.3 stubs; ratified into the record set on confirmation); (2) assessment attributes and weightings at sign-off, including the no-examination stance stated in Section 5; (3) syllabus hour allocations, including the security-testing unit sizing (U6, one of the two secure-coding homes); (4) indicative reading; (5) staffing names.
 
@@ -114,3 +114,4 @@ No examination is carried by design: the assessed capability is testing practice
 | Version | Date | Amendment | Authority |
 |---|---|---|---|
 | 1.0 | 20 Jul 2026 | Initial descriptor | SE descriptor thread |
+| 1.1 | 21 Jul 2026 | Inherited-governance citation refreshed to master v2.6 (V13 as amended by V14); no material change | SE descriptor thread |
