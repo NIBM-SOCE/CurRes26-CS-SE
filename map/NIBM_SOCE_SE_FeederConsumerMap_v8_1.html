@@ -198,14 +198,14 @@
 
   <!-- MASTHEAD -->
   <div class="mast">
-    <div class="eyebrow">NIBM School of Computing and Engineering &nbsp;&middot;&nbsp; Curriculum Restructuring 2026/2027 &nbsp;&middot;&nbsp; <span class="vchip">v8.1</span></div>
+    <div class="eyebrow">NIBM School of Computing and Engineering &nbsp;&middot;&nbsp; Curriculum Restructuring 2026/2027 &nbsp;&middot;&nbsp; <span class="vchip">2026 Issue</span></div>
     <h1>Feeder and Consumer Map - Computer Science with Software Engineering</h1>
     <div class="bars"><span class="b1"></span><span class="b2"></span></div>
     <p class="sub">Vertical mapping of the SLQF Level 3 (Diploma) and Level 4 (HND) stages onto the validated Coventry University FHEQ Levels 5 and 6. Every module is placed by what prepares it and what it prepares, so that each prerequisite chain is named and traceable rather than assumed.</p>
     <div class="metaline">
       <span><b>Award:</b> BSc (Hons) Computer Science with Software Engineering</span>
       <span><b>Validation partner:</b> Coventry University</span>
-      <span><b>Architecture:</b> v8.1 (module records v2.3)</span>
+      <span><b>Architecture:</b> Module records v2.4, issued 13 August 2026</span>
       <span><b>Credit basis:</b> SLQF - 1 credit = 50 notional hours (Industrial Training = 100)</span>
       <span><b>Working language:</b> Java (pathway instantiation of the cluster commons); JavaScript across the web vertical</span>
       <span><b>Diploma exit:</b> 41 credits / 13 modules</span>
@@ -269,6 +269,8 @@
       </div>
 
       <div class="cap-note"><b>Continuing totals shown.</b> The Diploma and HND exit awards each add a separate 4-credit Exit Block taken only by exiting students (Diploma exit 41 credits / 13 modules; HND exit 43 credits / 15 modules). CREST is a mandatory non-credit component and is not counted in the Year 2 credit total. Exit-block modules are terminal and do not feed the Coventry stage, so they are not drawn on the spine.</div>
+      <div class="cap-note"><b>Shared modules.</b> The institution-wide common modules, the cluster commons, the Integrative Skills modules and the exit-block modules are delivered to more than one pathway and their specifications are held in common. No single pathway may vary a shared module's scope, learning outcomes or assessment; changes require the agreement of every pathway that delivers it.</div>
+      <div class="cap-note"><b>FHEQ (comparability, reference only).</b> The FHEQ column is carried for comparability and reference only. FHEQ is a holistic framework operating at programme and award level; it is not applied module by module to the NIBM-delivered years, where SLQF is the binding framework. "Higher National Diploma" is the award-certificate term and reflects TVEC-side vocabulary; SLQF itself uses "Higher Diploma" for the same level. UK usage of "HND" denotes a qualification of a defined size and character under FHEQ, and no equivalence to it is asserted here: the column states a comparison, not a claim.</div>
 
       <!-- DETAIL PANEL -->
       <div class="panel" id="panel">
@@ -316,7 +318,7 @@
 
 <script>
 /* ============================================================
-   DATA - Software Engineering pathway, v8.1 (module records v2.3, 19 Jul 2026).
+   DATA - Software Engineering pathway, (module records v2.4).
    To reuse this template for another pathway, replace this block only.
    feeds: {to, soft?, note?}  -> to = target module id
    ============================================================ */
@@ -360,21 +362,21 @@ const MODS = [
    exit:'Computational-thinking component of the Diploma-level profile.'},
 
   {id:'deld',year:1,title:'Digital Electronics and Logic Design',code:'NB-SOCE-L3-CM-TT-04',cr:3,type:'cmn',typeLabel:'Common / Taught (laboratory)',
-   role:'New at v8.1. Electronics as a common laboratory module - SE graduates who read the hardware beneath their software, a differentiator for IoT-software and embedded-adjacent roles.',
+   role:'Newly introduced. Electronics as a common laboratory module - SE graduates who read the hardware beneath their software, a differentiator for IoT-software and embedded-adjacent roles.',
    feeds:[{to:'iot',note:'hardware literacy beneath connected-device software - the named DELD to IoT chain'},{to:'cap',soft:true,note:'enables properly resourced electronics/IoT capstone themes'}],
    covers:'Combinational and sequential logic design; digital-electronics fundamentals at introductory laboratory level; the bridge from logic to computer organisation and processor operation; number systems applied in hardware; laboratory practice throughout.',
    excludes:'Embedded-systems programming; electronics-engineering depth; pathway infrastructure content (the boundary with Operating Systems and Infrastructure is policed at specification stage).',
    exit:'Hardware literacy and analytical grounding in the Diploma-level profile.'},
 
   {id:'prog',year:1,title:'Programming Concepts',code:'NB-SOCE-L3-CC-TT-01',cr:4,type:'csc',typeLabel:'Common / Taught',lang:'Java',
-   role:'The load-bearing feeder of the pathway - the common language base for the Year 2 applied development set.',
-   feeds:[{to:'sesa',note:'development experience to ground process'},{to:'saf'},{to:'waf',note:'general programming behind client-side scripting'},{to:'pdsa1',note:'language fluency'},{to:'ead'},{to:'wcad'},{to:'mad1',note:'object orientation'},{to:'sqt'},{to:'iot'},{to:'aiad'}],
-   covers:'Programming fundamentals in a production language; control structures, functions and collections; object-oriented concepts; program design and debugging practice.',
-   excludes:'Data-structure and algorithm implementation depth (PDSA I); secure coding (owned in SE pathway space); pathway application stacks.',
+   role:'The load-bearing feeder of the pathway. Object-oriented programming is now stated explicitly in scope, outcomes and syllabus, taught as a way of organising a program rather than as syntax, and supplies the object model to six downstream modules that previously assumed it. Funded from within existing lecture hours; credits unchanged.',
+   feeds:[{to:'pdsa1',note:'language fluency and the object model'},{to:'sesa',note:'development experience to ground process; the object model'},{to:'saf',note:'the object model beneath structural patterns'},{to:'ead',note:'the object model beneath applied design patterns'},{to:'mad1',note:'the object model - named prerequisite'},{to:'sqt',note:'the object model beneath testing practice'},{to:'waf',note:'general programming behind client-side scripting'},{to:'wcad'},{to:'iot'},{to:'aiad'}],
+   covers:'Programming fundamentals in a production language; the pathway working language and its development tooling; control structures, functions and modular organisation; core data structures in code, including collections; object-oriented programming - classes and objects, encapsulation, inheritance, polymorphism and interface-style abstraction, expressed in the pathway working language; program design, testing and debugging practice.',
+   excludes:'Data-structure and algorithm implementation depth (Programming, Data Structures and Algorithms I); object-oriented design method, architectural styles and design patterns (owned by Software Architecture Foundations and Enterprise Application Development); secure-coding depth (owned in SE pathway space); pathway-owned applied stacks.',
    exit:'Programming competency central to the Diploma-level profile.'},
 
   {id:'dmms',year:1,title:'Data Models and Management Systems',code:'NB-SOCE-L3-CC-TT-02',cr:4,type:'csc',typeLabel:'Common / Taught',
-   role:'Retitled at v8.1 and now the pathway SQL teach-source: teaches SQL practice and DBMS use directly.',
+   role:'Retitled, and now the pathway SQL teach-source: teaches SQL practice and DBMS use directly.',
    feeds:[{to:'ead',note:'supplies practised SQL and DBMS use that Enterprise Application Development assumes'},{to:'mad1',note:'database integration (consumption level)'},{to:'iot',note:'device-data handling'},{to:'cu_ds',note:'the data strand, with Mathematical Thinking'}],
    covers:'Data-modelling concepts; relational-model foundations; structured and semi-structured data; a systems view of storage and retrieval; DBMS fundamentals with SQL practice as the emphasis of the fourth credit.',
    excludes:'Data-engineering and pipeline depth; production database administration; engineering-level schema design and normalisation.',
@@ -404,15 +406,15 @@ const MODS = [
   {id:'ecs1',year:1,title:'Effective Communication Skills I',code:'NB-SOCE-L3-CM-IS-01',cr:2,type:'int',typeLabel:'Common / Integrative Skills',
    role:'',
    feeds:[{to:'ecs2'},{to:'cu_ecs3',note:'the numbered communication spine'}],
-   covers:'Foundational written and verbal communication; audience awareness; introductory professional presentation.',
-   excludes:'Advanced interpersonal and reflective communication (ECS II and Level 5 ECS 3).',
+   covers:'Foundational written and spoken communication for academic and professional purposes; audience awareness and adaptation; introductory professional presentation; communication within a team.',
+   excludes:'Advanced interpersonal, reflective and workplace communication (Effective Communication Skills II, and NB5006CEM at Level 5); entrepreneurship and innovation content (CREST).',
    exit:'Professional-communication component of the Diploma-level profile.'},
 
   {id:'cproj',year:1,title:'Creative Project',code:'NB-SOCE-L3-CM-IS-02',cr:3,type:'int',typeLabel:'Common / Integrative Skills',
    role:'',
-   feeds:[{to:'cap',note:'prior supervised-project experience'},{to:'cu_project'},{to:'uxid',soft:true,note:'ideation, prototyping and delivery maturity'},{to:'cu_dux',soft:true}],
-   covers:'Supervised project work; ideation and delivery; presentation of outcomes; project ownership.',
-   excludes:'Pathway-specific applied capstone depth (Capstone Project); degree-level independent research (Level 6 Project).',
+   feeds:[{to:'cap',note:'prior supervised-project experience'},{to:'cu_project'},{to:'uxid',soft:true,note:'project delivery maturity and demonstration practice'},{to:'cu_dux',soft:true}],
+   covers:'A facilitated Year 1 project integrating Year 1 learning; ideation, scoping and planning; supervised build and iteration; presentation and demonstration of outcomes; project ownership and structured reflection. Participation mode: a team-based build with an individually graded reflective component, with individual contribution defined during planning and evidenced through a contribution log.',
+   excludes:'Pathway-specific applied capstone depth (Capstone Project); degree-level independent research (Level 6 Project). Prototyping method is owned by User Experience and Interaction Design.',
    exit:'Project and ownership evidence for the Diploma-level profile.'},
 
   /* ---------------- YEAR 2 (SLQF Level 4) ---------------- */
@@ -426,19 +428,19 @@ const MODS = [
   {id:'ead',year:2,title:'Enterprise Application Development',code:'NB-SOCE-L4-SE-TT-01',cr:4,type:'swe',typeLabel:'Pathway / Taught',
    role:'Architecture in practice; now assumes SQL fluency from Year 1.',
    feeds:[{to:'cu_webapi',note:'application construction'},{to:'cu_se2',note:'large-scale build, applied design patterns, architecture in practice'}],
-   covers:'Applied enterprise application construction; software design patterns; applied persistence (data-access layers, framework and ORM persistence, transactions); framework-based development; a continuous-integration DevOps thread.',
+   covers:'Applied enterprise application construction; software design patterns; applied persistence (data-access layers, framework and ORM persistence, transactions); framework-based development; a continuous-integration DevOps strand.',
    excludes:'SQL teaching and DBMS fundamentals (Data Models and Management Systems - fluency assumed); architectural styles and quality-attribute theory (Software Architecture Foundations); web, API and cloud delivery (Web and Cloud Application Development); testing depth (Software Quality and Testing).',
    exit:'Enterprise construction competency central to the SE HND-level profile.'},
 
   {id:'wcad',year:2,title:'Web and Cloud Application Development',code:'NB-SOCE-L4-SE-TT-02',cr:4,type:'swe',typeLabel:'Pathway / Taught',
-   role:'Retitled at v8.1, absorbing cloud delivery. Second tier of the web vertical and the densest module in the year.',
+   role:'Retitled, absorbing cloud delivery. Second tier of the web vertical and the densest module in the year.',
    feeds:[{to:'cu_webapi',note:'flagship: Node.js, REST, async, API security, deployment'},{to:'cu_se2',note:'microservice awareness and DevOps pipelines'},{to:'cu_mad2',note:'RESTful API consumption'},{to:'cu_cyber',note:'web authentication and HTTPS in application context'},{to:'aiad',note:'API consumption'},{to:'mad1',soft:true,note:'API-consumption mechanics'}],
-   covers:'Server-side JavaScript and Node.js; REST API design and implementation; asynchronous programming; API security and authentication; single-page application delivery; cloud deployment and operation of applications and APIs; the DevOps delivery pipeline; a web-security secure-coding thread.',
+   covers:'Server-side JavaScript and Node.js; REST API design and implementation; asynchronous programming; API security and authentication; single-page application delivery; cloud deployment and operation of applications and APIs; the DevOps delivery pipeline; a web-security secure-coding strand.',
    excludes:'Web foundations (Web Application Foundations); enterprise persistence build (Enterprise Application Development); cloud infrastructure provisioning and operations (Network Engineering pathway); device backends (IoT Application Development); deep security engineering (Level 5 Cyber Security).',
    exit:'Web, API and cloud-delivery competency central to the SE HND-level profile.'},
 
   {id:'mad1',year:2,title:'Mobile Application Development I',code:'NB-SOCE-L4-SE-TT-03',cr:3,type:'swe',typeLabel:'Pathway / Taught',
-   role:'Numbered predecessor mirroring the validated mobile chain; narrowed at v8.1 to its mobile-specific core as the supporting spine now carries more of its load.',
+   role:'Numbered predecessor mirroring the validated mobile chain; narrowed to its mobile-specific core as the supporting spine now carries more of its load.',
    feeds:[{to:'cu_mad2',note:'the direct numbered predecessor'}],
    covers:'Mobile application development; introductory software design patterns in the mobile context; mobile UI construction; database integration and RESTful API consumption.',
    excludes:'The MVVM pattern, continuous integration and crash-analytics depth (Level 6 Mobile Application Development 2); SQL teaching (Data Models and Management Systems).',
@@ -447,7 +449,7 @@ const MODS = [
   {id:'sqt',year:2,title:'Software Quality and Testing',code:'NB-SOCE-L4-SE-TT-04',cr:3,type:'swe',typeLabel:'Pathway / Taught',
    role:'The deliberate Year-2 repair for the front-loaded software-engineering process strand.',
    feeds:[{to:'cu_se2',note:'quality, testing, TDD, version control'},{to:'cu_agile',note:'automated testing and CI grounding'},{to:'cu_ssec',note:'security testing builds on testing fundamentals'}],
-   covers:'Software quality concepts and standards; testing strategies (unit, integration, acceptance); test-driven development; test doubles (mocks and spies); version-control practice; a security-testing secure-coding thread.',
+   covers:'Software quality concepts and standards; testing strategies (unit, integration, acceptance); test-driven development; test doubles (mocks and spies); version-control practice; a security-testing secure-coding strand.',
    excludes:'Deployment and DevOps pipeline depth (Enterprise Application Development; Web and Cloud Application Development); architectural design (Software Architecture Foundations).',
    exit:'Software-quality competency central to the SE HND-level profile.'},
 
@@ -459,7 +461,7 @@ const MODS = [
    exit:'User-centred design competency in the SE HND-level profile.'},
 
   {id:'iot',year:2,title:'IoT Application Development',code:'NB-SOCE-L4-SE-TT-06',cr:2,type:'swe',typeLabel:'Pathway / Taught',
-   role:'New at v8.1 (split from Cloud and IoT). Connected-device software with Digital Electronics and Logic Design as its named foundation; a documented employability element, indicative rather than hard-anchored to the degree.',
+   role:'Newly introduced, separated from the former combined cloud and connected-devices module. Connected-device software with Digital Electronics and Logic Design as its named foundation; a documented employability element, indicative rather than hard-anchored to the degree.',
    feeds:[{to:'cu_webapi',soft:true,note:'device API design'},{to:'cu_project',soft:true,note:'IoT project themes'},{to:'cap',soft:true,note:'IoT capstone themes, laboratory-resourced'}],
    covers:'Connected-device application backends; APIs to and from devices; device-data ingestion and handling; integration with cloud services.',
    excludes:'Electronics and embedded-hardware programming (Digital Electronics and Logic Design owns the foundations); device and network hardware (Network Engineering pathway); cloud deployment mechanics (Web and Cloud Application Development).',
@@ -473,7 +475,7 @@ const MODS = [
    exit:'AI-integration competency positioning graduates for AI-augmented software roles.'},
 
   {id:'bpmp',year:2,title:'Business and Project Management Practice',code:'NB-SOCE-L4-SE-TT-08',cr:2,type:'swe',typeLabel:'Pathway / Taught',
-   role:'New at v8.1. Restores credit-bearing business and project-management content to the HND profile.',
+   role:'Newly introduced. Restores credit-bearing business and project-management content to the HND profile.',
    feeds:[{to:'cu_lead',note:'management-practice grounding'},{to:'cu_agile',note:'project-management vocabulary and planning practice'},{to:'itrain',soft:true,note:'workplace-readiness grounding'}],
    covers:'Project-management practice (initiation, planning, estimation, tracking, agile and plan-driven); the business and organisational context of software work; introductory business processes; professional practice.',
    excludes:'Entrepreneurship and ideation (CREST); communication skill (Effective Communication Skills II); business-information-systems depth (IT for Business pathway); degree-level leadership theory (Level 6 Leadership and Entrepreneurial Practice); DevOps tooling (Web and Cloud Application Development; Enterprise Application Development).',
@@ -481,16 +483,16 @@ const MODS = [
 
   {id:'crest',year:2,title:'Entrepreneurship, Creativity and Innovation (CREST)',code:'NB-SOCE-L4-CM-IS-01',cr:0,type:'int',typeLabel:'Common / Integrative Skills',noncredit:true,
    role:'Now a mandatory non-credit completion component; its hours are excluded from award totals.',
-   feeds:[{to:'cu_lead',note:'entrepreneurship and professional-practice thread'}],
-   covers:'Entrepreneurship, creativity and innovation practice; ideation to value; enterprise skills.',
-   excludes:'Degree-level leadership and entrepreneurial theory (Level 6 Leadership and Entrepreneurial Practice); project-management and business practice (Business and Project Management Practice).',
+   feeds:[{to:'cu_lead',note:'entrepreneurship and professional-practice strand'}],
+   covers:'Entrepreneurship foundations and enterprise thinking; creativity and ideation practice; innovation processes and methods; opportunity identification and evaluation; taking an idea to a stated value proposition and pitching it.',
+   excludes:'Degree-level leadership and entrepreneurial theory (NB6002CEM); project-management and business practice (Business and Project Management Practice on the SE pathway); professional communication (Effective Communication Skills II).',
    exit:'Mandatory completion component of the HND award; enterprise-skills evidence without credit contribution.'},
 
   {id:'ecs2',year:2,title:'Effective Communication Skills II',code:'NB-SOCE-L4-CM-IS-02',cr:2,type:'int',typeLabel:'Common / Integrative Skills',
    role:'',
    feeds:[{to:'cu_ecs3',note:'the numbered communication spine'}],
-   covers:'Advanced interpersonal communication; assertiveness; reflective practice; audience-adaptive professional communication.',
-   excludes:'Degree-level interpersonal and emotional-intelligence depth (Level 5 ECS 3).',
+   covers:'Advanced professional communication in workplace and organisational settings; technical and business reporting and documentation; interview and professional-dialogue performance; interpersonal communication, assertiveness and reflective practice.',
+   excludes:'Academic-writing and research-readiness preparation (Capstone Project); the interpersonal-theory and emotional-intelligence depth of NB5006CEM; entrepreneurship content (CREST); pathway technical content.',
    exit:'Advanced-communication component of the HND-level profile.'},
 
   {id:'cap',year:2,title:'Capstone Project',code:'NB-SOCE-L4-SE-SK-01',cr:5,type:'skl',typeLabel:'Pathway / Skills',
@@ -723,7 +725,7 @@ cuRows(['cu_agile','cu_dux','cu_pdsa2','cu_cyber','cu_ds','cu_ecs3','cu_ethics']
 cuRows(['cu_ssec','cu_webapi','cu_mad2','cu_se2','cu_project','cu_lead'],'Level 6 - Year 4');
 
 document.getElementById('foot').innerHTML =
- 'Computer Science with Software Engineering - Feeder and Consumer Map, v8.1 (module records v2.3). Years 1 and 2 module architecture at design stage; Coventry FHEQ Levels 5 and 6 fixed by the validation agreement. '+
+ 'Computer Science with Software Engineering - Feeder and Consumer Map, (module records v2.4). Years 1 and 2 module architecture at design stage; Coventry FHEQ Levels 5 and 6 fixed by the validation agreement. '+
  'Credit values follow the SLQF (2015) basis of 50 notional hours per credit (Industrial Training 100). Credit values, hours distributions and assessment weightings are confirmed at module-specification stage. This document maps prerequisite and feeder relationships only. '+
  'Generated '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})+'.';
 </script>
