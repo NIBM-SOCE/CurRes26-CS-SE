@@ -15,13 +15,13 @@ The programme is delivered in two stages:
 
 ## 2. Qualification Structure
 
-| Programme stage | SLQF award | FHEQ equivalent | NVQ target | Award title |
+| Programme stage | SLQF award | FHEQ (comparability, reference only) | NVQ target | Award title |
 |---|---|---|---|---|
 | Year 1 (exit) | Diploma level | Level 4 | NVQ Level 5 (target) | Diploma in Computer Science with Software Engineering |
 | Year 2 (exit) | Higher Diploma level | Level 5 | NVQ Level 6 (target) | Higher National Diploma in Computer Science with Software Engineering |
 | Years 3-4 (Coventry) | Bachelors Honours level | Levels 5-6 | n/a | BSc (Hons) Computer Science with Software Engineering |
 
-"Higher National Diploma" is the award-certificate term; SLQF itself uses "Higher Diploma" for the same level. Both are used, with the SLQF level stated alongside. Final exit-certificate wording is being settled as part of exit-award finalisation; the titles above are the working form.
+The FHEQ column is carried for comparability and reference only. FHEQ is a holistic framework operating at programme and award level; it is not applied module by module to the NIBM-delivered years, where SLQF is the binding framework. "Higher National Diploma" is the award-certificate term and reflects TVEC-side vocabulary; SLQF itself uses "Higher Diploma" for the same level. UK usage of "HND" denotes a qualification of a defined size and character under FHEQ, and no equivalence to it is asserted here: the column states a comparison, not a claim. Final exit-certificate wording is being settled as part of exit-award finalisation; the titles above are the working form.
 
 **TVEC accreditation:** TVEC accreditation is being actively pursued and has not yet been granted. The NVQ-level targets above, and any other TVEC/NVQ-facing mappings referenced from this programme, are targets that may be adjusted once TVEC confirms its specific requirements. SLQF conventions are binding now, independently of that outcome. Any exit-award or accreditation language should carry this caveat until TVEC's requirements are final.
 
@@ -92,6 +92,8 @@ Progression continues at Coventry University under FHEQ Levels 5 and 6, leading 
 
 ## 5. Module Descriptors
 
+**Shared modules.** The institution-wide common modules, the cluster commons, the Integrative Skills modules and the exit-block modules are delivered to more than one pathway and their specifications are held in common. No single pathway may vary a shared module's boundary, learning outcomes or assessment; changes require the agreement of every pathway that delivers it. These descriptors are maintained centrally and published on the common-modules page, which always carries the current version.
+
 Each row links to the governance descriptor: the polished, review-ready module descriptor document. These are the authoritative version of each module's identity, learning outcomes, curriculum, assessment and staffing arrangement.
 
 The four Tier 1 commons, the cluster commons, the Integrative Skills modules and the exit-block modules are shared across pathways and maintained here as the central set; the other pathway repositories link to this page for them.
@@ -102,19 +104,19 @@ The four Tier 1 commons, the cluster commons, the Integrative Skills modules and
 
 | Code | Module | Type | Credits | Descriptor |
 |---|---|---|---|---|
-| NB-SOCE-L3-CM-TT-01 | Fundamentals of Computing | Institution-wide common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-01_FundamentalsOfComputing_Gov_v1.1.docx) |
-| NB-SOCE-L3-CM-TT-02 | Mathematical Thinking | Institution-wide common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-02_MathematicalThinking_Gov_v1.1.docx) |
-| NB-SOCE-L3-CM-TT-03 | Algorithmic Thinking | Institution-wide common | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-03_AlgorithmicThinking_Gov_v1.1.docx) |
-| NB-SOCE-L3-CM-TT-04 | Digital Electronics and Logic Design | Institution-wide common | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-04_DigitalElectronicsAndLogicDesign_Gov_v1.1.docx) |
-| NB-SOCE-L3-CC-TT-01 | Programming Concepts | Cluster common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-01_ProgrammingConcepts_Gov_v1.3.docx) |
-| NB-SOCE-L3-CC-TT-02 | Data Models and Management Systems | Cluster common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-02_DataModelsAndManagementSystems_Gov_v1.1.docx) |
+| NB-SOCE-L3-CM-TT-01 | Fundamentals of Computing | Institution-wide common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-01_FundamentalsOfComputing_Gov_v1.2.docx) |
+| NB-SOCE-L3-CM-TT-02 | Mathematical Thinking | Institution-wide common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-02_MathematicalThinking_Gov_v1.2.docx) |
+| NB-SOCE-L3-CM-TT-03 | Algorithmic Thinking | Institution-wide common | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-03_AlgorithmicThinking_Gov_v1.2.docx) |
+| NB-SOCE-L3-CM-TT-04 | Digital Electronics and Logic Design | Institution-wide common | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-TT-04_DigitalElectronicsAndLogicDesign_Gov_v1.2.docx) |
+| NB-SOCE-L3-CC-TT-01 | Programming Concepts | Cluster common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-01_ProgrammingConcepts_Gov_v1.4.docx) |
+| NB-SOCE-L3-CC-TT-02 | Data Models and Management Systems | Cluster common | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CC-TT-02_DataModelsAndManagementSystems_Gov_v1.2.docx) |
 | NB-SOCE-L3-SE-TT-01 | Software Engineering and Systems Analysis | Pathway (SE) | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-01_SoftwareEngineeringAndSystemsAnalysis_Gov_v1.0.docx) |
 | NB-SOCE-L3-SE-TT-02 | Software Architecture Foundations | Pathway (SE) | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-02_SoftwareArchitectureFoundations_Gov_v1.0.docx) |
 | NB-SOCE-L3-SE-TT-03 | Web Application Foundations | Pathway (SE) | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-SE-TT-03_WebApplicationFoundations_Gov_v1.1.docx) |
-| NB-SOCE-L3-CM-IS-01 | Effective Communication Skills I | Integrative Skills | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-01_EffectiveCommunicationSkillsI_Gov_v1.0.docx) |
-| NB-SOCE-L3-CM-IS-02 | Creative Project | Integrative Skills | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-02_CreativeProject_Gov_v1.0.docx) |
-| NB-SOCE-L3-CM-IS-03 | Industry Horizons | Exit Block (Diploma) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-03_IndustryHorizons_Gov_v1.0.docx) |
-| NB-SOCE-L3-CM-IS-04 | Professional Practice Foundations | Exit Block (Diploma) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-04_ProfessionalPracticeFoundations_Gov_v1.0.docx) |
+| NB-SOCE-L3-CM-IS-01 | Effective Communication Skills I | Integrative Skills | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-01_EffectiveCommunicationSkillsI_Gov_v1.1.docx) |
+| NB-SOCE-L3-CM-IS-02 | Creative Project | Integrative Skills | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-02_CreativeProject_Gov_v1.1.docx) |
+| NB-SOCE-L3-CM-IS-03 | Industry Horizons | Exit Block (Diploma) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-03_IndustryHorizons_Gov_v1.1.docx) |
+| NB-SOCE-L3-CM-IS-04 | Professional Practice Foundations | Exit Block (Diploma) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L3-Year1-Diploma/NB-SOCE-L3-CM-IS-04_ProfessionalPracticeFoundations_Gov_v1.1.docx) |
 
 ### Year 2 - Higher Diploma Stage
 
@@ -122,7 +124,7 @@ The four Tier 1 commons, the cluster commons, the Integrative Skills modules and
 
 | Code | Module | Type | Credits | Descriptor |
 |---|---|---|---|---|
-| NB-SOCE-L4-CC-TT-01 | Programming, Data Structures and Algorithms I | Cluster common | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CC-TT-01_PDSA_I_Gov_v1.3.docx) |
+| NB-SOCE-L4-CC-TT-01 | Programming, Data Structures and Algorithms I | Cluster common | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CC-TT-01_PDSA_I_Gov_v1.4.docx) |
 | NB-SOCE-L4-SE-TT-01 | Enterprise Application Development | Pathway (SE) | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-01_EnterpriseApplicationDevelopment_Gov_v1.1.docx) |
 | NB-SOCE-L4-SE-TT-02 | Web and Cloud Application Development | Pathway (SE) | 4 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-02_WebAndCloudApplicationDevelopment_Gov_v1.1.docx) |
 | NB-SOCE-L4-SE-TT-03 | Mobile Application Development I | Pathway (SE) | 3 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-03_MobileApplicationDevelopmentI_Gov_v1.2.docx) |
@@ -133,10 +135,24 @@ The four Tier 1 commons, the cluster commons, the Integrative Skills modules and
 | NB-SOCE-L4-SE-TT-08 | Business and Project Management Practice | Pathway (SE) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-TT-08_BusinessAndProjectManagementPractice_Gov_v1.0.docx) |
 | NB-SOCE-L4-SE-SK-01 | Capstone Project | Pathway (SE) | 5 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-SK-01_CapstoneProject_Gov_v1.0.docx) |
 | NB-SOCE-L4-SE-SK-02 | Industrial Training | Pathway (SE) | 5 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-SE-SK-02_IndustrialTraining_Gov_v1.0.docx) |
-| NB-SOCE-L4-CM-IS-01 | Entrepreneurship, Creativity and Innovation (CREST) | Integrative Skills - non-credit, pass/fail | 0 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-01_CREST_Gov_v1.0.docx) |
-| NB-SOCE-L4-CM-IS-02 | Effective Communication Skills II | Integrative Skills | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-02_EffectiveCommunicationSkillsII_Gov_v1.0.docx) |
-| NB-SOCE-L4-CM-IS-03 | Professional Standing and Career Strategy | Exit Block (HND) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-03_ProfessionalStandingAndCareerStrategy_Gov_v1.0.docx) |
-| NB-SOCE-L4-CM-IS-04 | Ethics and Responsibility in Computing Practice | Exit Block (HND) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-04_EthicsAndResponsibilityInComputingPractice_Gov_v1.0.docx) |
+| NB-SOCE-L4-CM-IS-01 | Entrepreneurship, Creativity and Innovation (CREST) | Integrative Skills - non-credit, pass/fail | 0 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-01_CREST_Gov_v1.1.docx) |
+| NB-SOCE-L4-CM-IS-02 | Effective Communication Skills II | Integrative Skills | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-02_EffectiveCommunicationSkillsII_Gov_v1.1.docx) |
+| NB-SOCE-L4-CM-IS-03 | Professional Standing and Career Strategy | Exit Block (HND) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-03_ProfessionalStandingAndCareerStrategy_Gov_v1.1.docx) |
+| NB-SOCE-L4-CM-IS-04 | Ethics and Responsibility in Computing Practice | Exit Block (HND) | 2 | [Descriptor](https://nibm-soce.github.io/CurRes26-CS-SE/modules/L4-Year2-HigherDiploma/NB-SOCE-L4-CM-IS-04_EthicsAndResponsibilityInComputingPractice_Gov_v1.1.docx) |
+
+### Recent Specification Changes
+
+The shared modules below were re-issued on 13 August 2026. Anyone working from an earlier copy should replace it.
+
+| Module | What changed |
+|---|---|
+| Programming Concepts | Object-oriented programming is now stated explicitly in the module's scope, outcomes and syllabus, taught as a way of organising a program rather than as syntax. Funded from within the module's existing lecture hours; credits unchanged. |
+| Effective Communication Skills I | Communication within a team added as a fourth strand. |
+| Effective Communication Skills II | Interpersonal communication, assertiveness and reflective practice restored alongside reporting and interview performance. Academic-writing and research-readiness preparation is owned by the Capstone Project and is stated as outside this module. |
+| Creative Project | Delivered as a team-based build with an individually graded reflective component. Individual contribution is defined during planning and evidenced through a contribution log, so each student's own work is attributable. |
+| Entrepreneurship, Creativity and Innovation | Scope held to opportunity identification, evaluation, value proposition and pitching. Business-model construction and intellectual-property content are outside the module. |
+
+The four institution-wide commons, the cluster common, Programming, Data Structures and Algorithms I and the four exit-block modules were re-issued at the same time with no change to what is taught: their descriptors now quote the shared specification directly and carry SLQF category mapping for every learning outcome.
 
 ## 6. Feeder and Consumer Map
 

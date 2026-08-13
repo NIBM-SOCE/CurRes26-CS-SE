@@ -1,7 +1,7 @@
 # Module Descriptor - Professional Practice Foundations
 
-**Code:** NB-SOCE-L3-CM-IS-04  ·  **Tier:** Institution-Wide Common (Exit Block)  ·  **Type:** Common / Integrative Skills  ·  **Status:** Draft for Review v1.0  ·  **Date:** 20 Jul 2026
-**Sources:** NIBM_SOCE_CMN_ExitBlock_ModuleRecords v1.2; 01_Shared_Spine.md v2.2; 04_Conventions.md (Assessment Component Taxonomy); 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.0 (skills variant, exit-block)
+**Code:** NB-SOCE-L3-CM-IS-04  ·  **Tier:** Institution-Wide Common (Exit Block)  ·  **Type:** Common / Integrative Skills  ·  **Status:** Draft for Review v1.1  ·  **Date:** 13 Aug 2026
+**Sources:** NIBM_SOCE_CMN_ExitBlock_ModuleRecords v1.2; 00_Master_Decisions.md v2.7; 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.0 (skills variant, exit-block)
 
 > **Items requiring confirmation at review:** (1) the canonical learning-outcome set, inherited verbatim by the carrying registers once ratified; (2) assessment component attributes and weightings, confirmed at specification sign-off; (3) workshop-programme hour allocations; (4) indicative reading; (5) staffing names. TVEC requirements are not yet final; the competency-evidence mapping remains adaptable.
 
@@ -20,27 +20,29 @@
 | Delivery mode | Workshop-based skills delivery: 15 workshop hours as 5 three-hour blocks (V10), plus facilitated activities, coaching and independent work per the B-2 profile |
 | Hours profile | Skills 2-credit (B-2), 05_Hours_Model.md v1.2 |
 
+> **Shared module.** This module is delivered to the pathways named above and its specification is held in common. The specification boundary, learning outcomes and assessment specification may not be modified by any single pathway. Changes require the agreement of every carrying pathway and are made through the Master Decisions register. Physical custody of this file in the CS(SE) document set is an administrative arrangement of the current cycle and confers no editorial authority on that pathway.
+
 ## 2. Module Purpose and Aims
 
 To prepare a Diploma-exiting student for the workplace: expected professional conduct and communication, honest and effective application materials, and a clear grasp of an entry-level computing professional's responsibilities. The module is practical and evidence-producing, and is a core competency-evidence module of the Diploma exit oriented to the NVQ Level 5 target.
 
-### Specification Boundary (canonical, v8.1 Phase 2)
+### Specification Boundary (quoted from NIBM_SOCE_CMN_ExitBlock_ModuleRecords v1.2 - QUOTED, never edited)
 
 > **Covers:** workplace conduct and professional expectations; CV and application craft; interview and workplace communication basics; introductory professional responsibility.
 >
 > **Does NOT cover:** ethics depth and professional-standing strategy (HND exit block); communication-skills breadth (Effective Communication Skills I and II).
 >
-> *The boundary text is the audited canonical text, identical wherever carried. Any change is a change request against the Master Decisions register, not a descriptor-level edit.*
+> *Boundary changes are change requests against Master Decisions, not descriptor edits.*
 
 ## 3. Learning Outcomes
 
 | Ref | Intended Learning Outcome | Register |
 |---|---|---|
-| LO1 | Demonstrate expected workplace conduct and professional communication in computing settings. | Apply |
-| LO2 | Produce application materials (CV, profile) that evidence competencies honestly and effectively. | Apply |
-| LO3 | Explain the responsibilities of an entry-level computing professional. | Understand |
+| LO1 | Demonstrate expected workplace conduct and professional communication in computing settings. | Apply (Bloom); K-SAM 3, 10 |
+| LO2 | Produce application materials (CV, profile) that evidence competencies honestly and effectively. | Apply (Bloom); K-SAM 3, 11 |
+| LO3 | Explain the responsibilities of an entry-level computing professional. | Understand (Bloom); K-SAM 1, 10 |
 
-*Canonical set authored at this descriptor (v8.1 Phase 3) from the central exit-block record; presented for ratification, after which the exit-block records inherit it verbatim.*
+**LO provenance note (canonical device):** the set is quoted-source aligned to the central exit-block record. No outcome is changed at this re-issue. K-SAM category names follow 07_SLQF_Reference v1.1: 1 Subject / Theoretical Knowledge, 3 Communication, 10 Attitudes, Values and Professionalism, 11 Vision for Life. On ratification the exit-block records inherit this set verbatim.
 
 ### Exit-Award Orientation (D9; TVEC)
 
@@ -104,3 +106,4 @@ Reassessment: by the failed component only, with an equivalent task, per School 
 | Version | Date | Amendment | Authority |
 |---|---|---|---|
 | 1.0 | 20 Jul 2026 | Initial v8.1 exit-block descriptor (08_Descriptor_Style.md Section 7); B-2 hours aligned to V10 | Phase 3 drafting |
+| 1.1 | 13 Aug 2026 | Re-issued under the authoring regime adopted at Curriculum Committee 13 Aug 2026: boundary quoted from NIBM_SOCE_CMN_ExitBlock_ModuleRecords v1.2 rather than self-certified; LO provenance note added; K-SAM mapping applied; shared-module notice added. No specification change. | Curriculum Committee, 13 Aug 2026 |

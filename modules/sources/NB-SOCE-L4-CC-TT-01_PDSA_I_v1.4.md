@@ -1,7 +1,7 @@
 # Module Descriptor - Programming, Data Structures and Algorithms I
 
-**Code:** NB-SOCE-L4-CC-TT-01  ·  **Tier:** Cluster Common (Tier 2)  ·  **Status:** Draft for Review v1.1  ·  **Date:** 20 Jul 2026
-**Sources:** pathway registers SE v2.3 / AI&DS v2.1 / ITB v2.1 / NEC v1.1; 01_Shared_Spine.md v2.2; 03_Module_Record_Template.md v1.1; 04_Conventions.md (Assessment Component Taxonomy); 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; v8.1 Phase 2 Register v1.0
+**Code:** NB-SOCE-L4-CC-TT-01  ·  **Tier:** Cluster Common (Tier 2)  ·  **Status:** Draft for Review v1.4  ·  **Date:** 13 Aug 2026
+**Sources:** 01_Shared_Spine.md v2.3; 00_Master_Decisions.md v2.7; pathway registers SE v2.3 / AI&DS v2.1 / ITB v2.1 / NEC v1.1; 03_Module_Record_Template.md v1.1; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; v8.1 Phase 2 Register v1.0
 
 > **Items requiring confirmation at review:** (1) the canonical learning-outcome set, inherited verbatim by the carrying registers once ratified; (2) assessment weightings and component attributes, confirmed at specification sign-off; (3) indicative syllabus hour allocations; (4) indicative reading; (5) staffing names.
 
@@ -18,28 +18,30 @@
 | Delivery mode | Session-based: 3-hour blocks (V10); 16 lecture sessions plus tutorials, practicals and demonstration per the hours profile |
 | Hours profile | Taught 3-credit (A-3) |
 
+> **Shared module.** This module is delivered to the pathways named above and its specification is held in common. The specification boundary, learning outcomes and assessment specification may not be modified by any single pathway. Changes require the agreement of every carrying pathway and are made through the Master Decisions register. Physical custody of this file in the CS(SE) document set is an administrative arrangement of the current cycle and confers no editorial authority on that pathway.
+
 ## 2. Module Purpose and Aims
 
 To implement, in code, the structures and algorithm families that Algorithmic Thinking established conceptually and Programming Concepts made expressible: linked structures, stacks, queues, trees, heaps and hash tables; searching, sorting and recursion; and the shift from complexity intuition to working Big-O analysis. The module is the direct on-ramp to NB5002CEM and deliberately stops short of advanced and distributed algorithms.
 
-### Specification Boundary (canonical, v8.1 Phase 2)
+### Specification Boundary (quoted from 01_Shared_Spine.md v2.3, entry T2.3 - QUOTED, never edited)
 
 > **Covers:** data structures (linked lists, trees, heaps, hash tables); core algorithm families; complexity (Big-O); introduction to concurrency and data-consistency concepts.
 >
 > **Does NOT cover:** advanced and distributed algorithms (NB5002CEM); pathway application stacks (owners named in each pathway's records).
 >
-> *The boundary text is the audited canonical text, identical in every carrying register. Any change is a change request against the Master Decisions register, not a descriptor-level edit.*
+> *Boundary changes are change requests against Master Decisions, not descriptor edits.*
 
 ## 3. Learning Outcomes
 
 | Ref | Intended Learning Outcome | Register |
 |---|---|---|
-| LO1 | Implement core data structures and justify the choice of structure for a given problem. | Apply / Analyse |
-| LO2 | Implement and compare searching, sorting and recursive algorithms in code. | Apply / Analyse |
-| LO3 | Analyse algorithm and data-structure performance using Big-O reasoning. | Analyse |
-| LO4 | Explain concurrency and data-consistency concepts as they affect shared data structures. | Understand |
+| LO1 | Implement core data structures and justify the choice of structure for a given problem. | Apply / Analyse (Bloom); K-SAM 2, 5 |
+| LO2 | Implement and compare searching, sorting and recursive algorithms in code. | Apply / Analyse (Bloom); K-SAM 2, 5 |
+| LO3 | Analyse algorithm and data-structure performance using Big-O reasoning. | Analyse (Bloom); K-SAM 1, 5 |
+| LO4 | Explain concurrency and data-consistency concepts as they affect shared data structures. | Understand (Bloom); K-SAM 1 |
 
-*Canonical set authored at this descriptor (v8.1 Phase 3); presented for ratification, after which the two carrying registers inherit it verbatim. As a Level 4 taught module it carries the cluster analytical-outcome rule with margin: LO1, LO2 and LO3 all sit at the analytical register (v8.1 Phase 2, Section 5).*
+**LO provenance note (canonical device):** the set is quoted-source aligned to 01_Shared_Spine v2.3 T2.3. As a Level 4 taught module it carries the cluster analytical-outcome rule with margin: LO1, LO2 and LO3 all sit at the analytical register. The module's standing assumption of Programming Concepts is satisfied by the adopted T2.1 text, which supplies the object model and collections literacy this module implements at depth. No outcome is changed at this re-issue. K-SAM category names follow 07_SLQF_Reference v1.1: 1 Subject / Theoretical Knowledge, 2 Practical Knowledge and Application, 5 Creativity and Problem Solving. On ratification the two carrying records inherit this set verbatim.
 
 ### Integrative Points and Seams
 
@@ -115,3 +117,4 @@ Reassessment: by the failed component only, with an equivalent task, per School 
 | 1.1 | 20 Jul 2026 | Taxonomy-coded assessment with confirmed scheme; integrative table limited to carriers; placeholders removed; dual-format issue (MD source + governance docx) | Phase 3 drafting |
 | 1.2 | 20 Jul 2026 | Working language resolved to Java (V13); reading completed; PC memory strand and ITB conceptual-alignment wording | Phase 3 drafting |
 | 1.3 | 20 Jul 2026 | Pathway-instantiated working language (V14): Java CS(SE) / Python CS(AI&DS) as a bound pair; single-parameter rule; common assessment specification with cross-pathway moderation; dual primary texts | Phase 3 drafting |
+| 1.4 | 13 Aug 2026 | Re-issued under the authoring regime adopted at Curriculum Committee 13 Aug 2026: boundary quoted from 01_Shared_Spine.md v2.3, entry T2.3 rather than self-certified; LO provenance note added; K-SAM mapping applied; shared-module notice added. No specification change. | Curriculum Committee, 13 Aug 2026 |

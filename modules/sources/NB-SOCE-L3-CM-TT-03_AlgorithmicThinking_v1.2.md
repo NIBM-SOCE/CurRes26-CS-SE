@@ -1,7 +1,7 @@
 # Module Descriptor - Algorithmic Thinking
 
-**Code:** NB-SOCE-L3-CM-TT-03  ·  **Tier:** Institution-Wide Common (Tier 1)  ·  **Status:** Draft for Review v1.1  ·  **Date:** 20 Jul 2026
-**Sources:** pathway registers SE v2.3 / AI&DS v2.1 / ITB v2.1 / NEC v1.1; 01_Shared_Spine.md v2.2; 03_Module_Record_Template.md v1.1; 04_Conventions.md (Assessment Component Taxonomy); 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; v8.1 Phase 2 Register v1.0
+**Code:** NB-SOCE-L3-CM-TT-03  ·  **Tier:** Institution-Wide Common (Tier 1)  ·  **Status:** Draft for Review v1.2  ·  **Date:** 13 Aug 2026
+**Sources:** 01_Shared_Spine.md v2.2; 00_Master_Decisions.md v2.7; pathway registers SE v2.3 / AI&DS v2.1 / ITB v2.1 / NEC v1.1; 03_Module_Record_Template.md v1.1; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; v8.1 Phase 2 Register v1.0
 
 > **Items requiring confirmation at review:** (1) the canonical learning-outcome set, inherited verbatim by the carrying registers once ratified; (2) assessment weightings and component attributes, confirmed at specification sign-off; (3) indicative syllabus hour allocations; (4) indicative reading; (5) staffing names.
 
@@ -18,28 +18,30 @@
 | Delivery mode | Session-based: 3-hour blocks (V10); 16 lecture sessions plus tutorials, practicals and demonstration per the hours profile |
 | Hours profile | Taught 3-credit (A-3), 05_Hours_Model.md v1.2 (V10) |
 
+> **Shared module.** This module is delivered to the pathways named above and its specification is held in common. The specification boundary, learning outcomes and assessment specification may not be modified by any single pathway. Changes require the agreement of every carrying pathway and are made through the Master Decisions register. Physical custody of this file in the CS(SE) document set is an administrative arrangement of the current cycle and confers no editorial authority on that pathway.
+
 ## 2. Module Purpose and Aims
 
 To develop language-independent algorithmic reasoning: decomposing problems into structured, solvable components; expressing solutions in pseudocode and flow representations; understanding searching, sorting and elementary data structures conceptually; and building an intuition for algorithmic efficiency, deliberately short of formal asymptotic analysis, which is owned downstream. The V3.3 re-banding trims hours, not boundary: the conceptual scope is unchanged from v8.
 
-### Specification Boundary (canonical, v8.1 Phase 2)
+### Specification Boundary (quoted from 01_Shared_Spine.md v2.2, entry T1.3 - QUOTED, never edited)
 
 > **Covers:** problem decomposition; pseudocode and flow representation; searching and sorting concepts; elementary data structures conceptually; complexity intuition (not formal asymptotic analysis).
 >
 > **Does NOT cover:** implementation in a production language; formal algorithm analysis (owners named in each pathway's records).
 >
-> *The boundary text is the audited canonical text, identical in every carrying register. Any change is a change request against the Master Decisions register, not a descriptor-level edit.*
+> *Boundary changes are change requests against Master Decisions, not descriptor edits.*
 
 ## 3. Learning Outcomes
 
 | Ref | Intended Learning Outcome | Register |
 |---|---|---|
-| LO1 | Decompose problems into structured, solvable components. | Analyse |
-| LO2 | Represent solutions using pseudocode and flow representations. | Apply |
-| LO3 | Compare searching and sorting strategies conceptually. | Analyse |
-| LO4 | Reason informally about algorithmic efficiency. | Analyse / Evaluate (informal) |
+| LO1 | Decompose problems into structured, solvable components. | Analyse (Bloom); K-SAM 5 |
+| LO2 | Represent solutions using pseudocode and flow representations. | Apply (Bloom); K-SAM 2, 3 |
+| LO3 | Compare searching and sorting strategies conceptually. | Analyse (Bloom); K-SAM 1, 5 |
+| LO4 | Reason informally about algorithmic efficiency. | Analyse / Evaluate (informal) (Bloom); K-SAM 1, 5 |
 
-*Canonical set authored at this descriptor (v8.1 Phase 3), harmonising the register variants; presented for ratification, after which the pathway registers inherit it verbatim. Unchanged in substance from the v8 set.*
+**LO provenance note (canonical device):** the set is quoted-source aligned to 01_Shared_Spine v2.2 T1.3 and is unchanged in substance from the v8 set. LO4's informal register is deliberate: complexity intuition is taught here and formal asymptotic analysis is owned by Programming, Data Structures and Algorithms I. K-SAM category names follow 07_SLQF_Reference v1.1: 1 Subject / Theoretical Knowledge, 2 Practical Knowledge and Application, 3 Communication, 5 Creativity and Problem Solving. On ratification the four carrying records inherit this set verbatim.
 
 ### Integrative Points and Seams
 
@@ -113,3 +115,4 @@ Reassessment: by the failed component only, with an equivalent task, per School 
 |---|---|---|---|
 | 1.0 | 19 Jul 2026 | Initial v8.1 descriptor | Phase 3 drafting |
 | 1.1 | 20 Jul 2026 | Taxonomy-coded assessment with confirmed scheme; integrative table limited to carriers; placeholders removed; dual-format issue (MD source + governance docx) | Phase 3 drafting |
+| 1.2 | 13 Aug 2026 | Re-issued under the authoring regime adopted at Curriculum Committee 13 Aug 2026: boundary quoted from 01_Shared_Spine.md v2.2, entry T1.3 rather than self-certified; LO provenance note added; K-SAM mapping applied; shared-module notice added. No specification change. | Curriculum Committee, 13 Aug 2026 |

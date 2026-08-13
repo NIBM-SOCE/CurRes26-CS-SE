@@ -1,7 +1,7 @@
 # Module Descriptor - Digital Electronics and Logic Design
 
-**Code:** NB-SOCE-L3-CM-TT-04  ·  **Tier:** Institution-Wide Common (Tier 1)  ·  **Status:** Draft for Review v1.1  ·  **Date:** 20 Jul 2026
-**Sources:** pathway registers SE v2.3 / AI&DS v2.1 / ITB v2.1 / NEC v1.1; 01_Shared_Spine.md v2.2; 03_Module_Record_Template.md v1.1; 04_Conventions.md (Assessment Component Taxonomy); 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; v8.1 Phase 2 Register v1.0
+**Code:** NB-SOCE-L3-CM-TT-04  ·  **Tier:** Institution-Wide Common (Tier 1)  ·  **Status:** Draft for Review v1.2  ·  **Date:** 13 Aug 2026
+**Sources:** 01_Shared_Spine.md v2.2; 00_Master_Decisions.md v2.7; pathway registers SE v2.3 / AI&DS v2.1 / ITB v2.1 / NEC v1.1; 03_Module_Record_Template.md v1.1; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; v8.1 Phase 2 Register v1.0
 
 > **Items requiring confirmation at review:** (1) the canonical learning-outcome set, inherited verbatim by the carrying registers once ratified; (2) assessment weightings and component attributes, confirmed at specification sign-off; (3) indicative syllabus hour allocations; (4) indicative reading; (5) staffing names.
 
@@ -18,28 +18,30 @@
 | Delivery mode | Session-based: 3-hour blocks (V10); 16 lecture sessions plus tutorials, practicals and demonstration per the hours profile |
 | Hours profile | Taught 3-credit (A-3), 05_Hours_Model.md v1.2 (V10); laboratory-weighted adjustment permitted at specification within the invariants |
 
+> **Shared module.** This module is delivered to the pathways named above and its specification is held in common. The specification boundary, learning outcomes and assessment specification may not be modified by any single pathway. Changes require the agreement of every carrying pathway and are made through the Master Decisions register. Physical custody of this file in the CS(SE) document set is an administrative arrangement of the current cycle and confers no editorial authority on that pathway.
+
 ## 2. Module Purpose and Aims
 
 To give every SOCE student a genuine hardware foundation: designing and verifying digital logic, understanding the electronic components that realise it, and seeing the bridge from gates to processor operation. This module is the v8.1 hardware shift in curricular form - the full answer to the stakeholder issues that v8's software-only strand deferred - and it is deliberately laboratory-based: students build and test what they design.
 
-### Specification Boundary (canonical, v8.1 Phase 2)
+### Specification Boundary (quoted from 01_Shared_Spine.md v2.2, entry T1.4 - QUOTED, never edited)
 
 > **Covers:** combinational and sequential logic design; digital electronics fundamentals at introductory laboratory level (components, gates, simple circuits); the bridge from logic to computer organisation and processor operation; number systems applied in hardware; laboratory practice throughout.
 >
 > **Does NOT cover:** embedded systems programming; electronics engineering depth; pathway infrastructure content (the boundary with NEC's Operating Systems and Infrastructure is policed at specification stage - OS&I keeps its systems-administration substrate, DELD owns logic and electronics).
 >
-> *The boundary text is the audited canonical text, identical in every carrying register. Any change is a change request against the Master Decisions register, not a descriptor-level edit.*
+> *Boundary changes are change requests against Master Decisions, not descriptor edits.*
 
 ## 3. Learning Outcomes
 
 | Ref | Intended Learning Outcome | Register |
 |---|---|---|
-| LO1 | Design and verify combinational and sequential logic circuits. | Apply / introductory Create (defended, see K-SAM note) |
-| LO2 | Explain the operation of common digital electronic components within simple circuits. | Understand |
-| LO3 | Relate logic-level design to computer organisation and processor operation. | Understand / Apply |
-| LO4 | Build and test digital circuits using laboratory instruments and simulation tools. | Apply (K-SAM category 7) |
+| LO1 | Design and verify combinational and sequential logic circuits. | Apply / introductory Create (defended below) (Bloom); K-SAM 2, 5 |
+| LO2 | Explain the operation of common digital electronic components within simple circuits. | Understand (Bloom); K-SAM 1 |
+| LO3 | Relate logic-level design to computer organisation and processor operation. | Understand / Apply (Bloom); K-SAM 1 |
+| LO4 | Build and test digital circuits using laboratory instruments and simulation tools. | Apply (Bloom); K-SAM 2, 7 |
 
-*Canonical set authored at this descriptor (v8.1 Phase 3); presented for ratification, after which the pathway registers inherit it verbatim. LO1's verb was confirmed at the SE Phase 2 close; the formal defence is stated below per NEC finding N8a.*
+**LO provenance note (canonical device):** the set is quoted-source aligned to 01_Shared_Spine v2.2 T1.4. LO1's verb was confirmed at the SE Phase 2 close and the formal defence is stated below. The category gloss carried at v1.1 is corrected at this re-issue: category 7 is Information Usage and Management in 07_SLQF_Reference v1.1, not practical and psychomotor skills, and the practical-performance defence properly rests on category 2. K-SAM category names follow 07_SLQF_Reference v1.1: 1 Subject / Theoretical Knowledge, 2 Practical Knowledge and Application, 5 Creativity and Problem Solving, 7 Information Usage and Management. On ratification the four carrying records inherit this set verbatim.
 
 ### Integrative Points and Seams
 
@@ -68,7 +70,7 @@ To give every SOCE student a genuine hardware foundation: designing and verifyin
 
 ### K-SAM Verb Defence (per NEC finding N8a, stated not assumed)
 
-> **Defence:** LO1 ("Design and verify") and LO4 ("Build and test") sit above the typical Level 3 cognitive ladder but are defended under K-SAM category 7 (practical and psychomotor skills): introductory circuit design from a truth-table specification, and laboratory construction and testing against it, are genuine skill performances at this level, standard in first-year digital-logic provision internationally. The cognitive-domain outcomes (LO2, LO3) sit at the conventional Level 3 register. This defence travels into the compliance narrative of the validation submission.
+> **Defence:** LO1 ("Design and verify") and LO4 ("Build and test") sit above the typical Level 3 cognitive ladder but are defended under K-SAM category 2 (Practical Knowledge and Application), with the laboratory-instrument and simulation-tool strand additionally engaging category 7 (Information Usage and Management): introductory circuit design from a truth-table specification, and laboratory construction and testing against it, are genuine skill performances at this level, standard in first-year digital-logic provision internationally. The cognitive-domain outcomes (LO2, LO3) sit at the conventional Level 3 register. This defence travels into the compliance narrative of the validation submission.
 
 ### Lineage and Resourcing
 
@@ -122,3 +124,4 @@ Reassessment: by the failed component only, with an equivalent task, per School 
 |---|---|---|---|
 | 1.0 | 19 Jul 2026 | Initial v8.1 descriptor | Phase 3 drafting |
 | 1.1 | 20 Jul 2026 | Taxonomy-coded assessment with confirmed scheme; integrative table limited to carriers; placeholders removed; dual-format issue (MD source + governance docx) | Phase 3 drafting |
+| 1.2 | 13 Aug 2026 | Re-issued under the authoring regime adopted at Curriculum Committee 13 Aug 2026: boundary quoted from 01_Shared_Spine.md v2.2, entry T1.4 rather than self-certified; LO provenance note added; K-SAM mapping applied; shared-module notice added. No specification change. | Curriculum Committee, 13 Aug 2026 |

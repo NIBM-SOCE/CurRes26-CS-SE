@@ -1,7 +1,7 @@
 # Module Descriptor - Industry Horizons
 
-**Code:** NB-SOCE-L3-CM-IS-03  ·  **Tier:** Institution-Wide Common (Exit Block)  ·  **Type:** Common / Integrative Skills  ·  **Status:** Draft for Review v1.0  ·  **Date:** 20 Jul 2026
-**Sources:** NIBM_SOCE_CMN_ExitBlock_ModuleRecords v1.2; 01_Shared_Spine.md v2.2; 04_Conventions.md (Assessment Component Taxonomy); 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.0 (skills variant, exit-block)
+**Code:** NB-SOCE-L3-CM-IS-03  ·  **Tier:** Institution-Wide Common (Exit Block)  ·  **Type:** Common / Integrative Skills  ·  **Status:** Draft for Review v1.1  ·  **Date:** 13 Aug 2026
+**Sources:** NIBM_SOCE_CMN_ExitBlock_ModuleRecords v1.2; 00_Master_Decisions.md v2.7; 01_Shared_Spine.md v2.2; 04_Conventions.md v1.2; 05_Hours_Model.md v1.2; 07_SLQF_Reference.md v1.1; 08_Descriptor_Style.md v1.0 (skills variant, exit-block)
 
 > **Items requiring confirmation at review:** (1) the canonical learning-outcome set, inherited verbatim by the carrying registers once ratified; (2) assessment component attributes and weightings, confirmed at specification sign-off; (3) workshop-programme hour allocations; (4) indicative reading; (5) staffing names. TVEC requirements are not yet final; the competency-evidence mapping remains adaptable.
 
@@ -20,27 +20,29 @@
 | Delivery mode | Workshop-based skills delivery: 15 workshop hours as 5 three-hour blocks (V10), plus facilitated activities, coaching and independent work per the B-2 profile |
 | Hours profile | Skills 2-credit (B-2), 05_Hours_Model.md v1.2 |
 
+> **Shared module.** This module is delivered to the pathways named above and its specification is held in common. The specification boundary, learning outcomes and assessment specification may not be modified by any single pathway. Changes require the agreement of every carrying pathway and are made through the Master Decisions register. Physical custody of this file in the CS(SE) document set is an administrative arrangement of the current cycle and confers no editorial authority on that pathway.
+
 ## 2. Module Purpose and Aims
 
 To equip a student exiting at Diploma level with a clear, realistic view of the computing employment landscape and an initial evidence portfolio to enter it. The module maps sector roles, routes and entry expectations against the student's pathway, and turns completed Year 1 work into structured, auditable evidence of capability. It is a core competency-evidence module of the Diploma exit and is oriented to the NVQ Level 5 target.
 
-### Specification Boundary (canonical, v8.1 Phase 2)
+### Specification Boundary (quoted from NIBM_SOCE_CMN_ExitBlock_ModuleRecords v1.2 - QUOTED, never edited)
 
 > **Covers:** the employment landscape of the computing and IT sector; industry roles, career routes and entry expectations; sector awareness aligned to the student's pathway; portfolio seeding.
 >
 > **Does NOT cover:** career strategy and professional-profile depth (Professional Standing and Career Strategy, HND exit); workplace conduct foundations (Professional Practice Foundations).
 >
-> *The boundary text is the audited canonical text, identical wherever carried. Any change is a change request against the Master Decisions register, not a descriptor-level edit.*
+> *Boundary changes are change requests against Master Decisions, not descriptor edits.*
 
 ## 3. Learning Outcomes
 
 | Ref | Intended Learning Outcome | Register |
 |---|---|---|
-| LO1 | Map the roles, routes and expectations of the computing employment landscape relevant to the pathway. | Understand / Apply |
-| LO2 | Assemble an initial evidence portfolio of skills and completed work. | Apply |
-| LO3 | Identify a realistic personal entry route into industry or further study. | Apply / introductory Evaluate |
+| LO1 | Map the roles, routes and expectations of the computing employment landscape relevant to the pathway. | Understand / Apply (Bloom); K-SAM 1, 9 |
+| LO2 | Assemble an initial evidence portfolio of skills and completed work. | Apply (Bloom); K-SAM 7, 11 |
+| LO3 | Identify a realistic personal entry route into industry or further study. | Apply / introductory Evaluate (Bloom); K-SAM 11, 12 |
 
-*Canonical set authored at this descriptor (v8.1 Phase 3) from the central exit-block record; presented for ratification, after which the exit-block records inherit it verbatim.*
+**LO provenance note (canonical device):** the set is quoted-source aligned to the central exit-block record. No outcome is changed at this re-issue. K-SAM category names follow 07_SLQF_Reference v1.1: 1 Subject / Theoretical Knowledge, 7 Information Usage and Management, 9 Adaptability and Flexibility, 11 Vision for Life, 12 Updating Self / Lifelong Learning. Categories 11 and 12 carry the portfolio and planning work, consistent with the SLQF's own recommendation of portfolios and reflective practice for those categories. On ratification the exit-block records inherit this set verbatim.
 
 ### Exit-Award Orientation (D9; TVEC)
 
@@ -104,3 +106,4 @@ Reassessment: by the failed component only, with an equivalent task, per School 
 | Version | Date | Amendment | Authority |
 |---|---|---|---|
 | 1.0 | 20 Jul 2026 | Initial v8.1 exit-block descriptor (08_Descriptor_Style.md Section 7); B-2 hours aligned to V10 | Phase 3 drafting |
+| 1.1 | 13 Aug 2026 | Re-issued under the authoring regime adopted at Curriculum Committee 13 Aug 2026: boundary quoted from NIBM_SOCE_CMN_ExitBlock_ModuleRecords v1.2 rather than self-certified; LO provenance note added; K-SAM mapping applied; shared-module notice added. No specification change. | Curriculum Committee, 13 Aug 2026 |
